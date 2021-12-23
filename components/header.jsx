@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
+import {useGlobalContext} from "../context"
 const Header = () =>{
   const [state, setState] = useState(true)
   const [active, setActive] = useState(0)
@@ -33,15 +34,16 @@ const Header = () =>{
     );
 }
 
-const NavItem = ({name, link,state, active , setActive , index}) =>{
+const NavItem = ({name, link,state , index}) =>{
+  const {active, setActive} = useGlobalContext()
   return (
     <li
     id={index}
       className={`nav-item  ${state ? "" : "show"}  ${
         active === index ? "current" : ""
       }`}
-      onClick={()=>{
-        setActive(index)
+      onClick={async()=>{
+       await setActive(index)
         console.log( active)
       }
       }
