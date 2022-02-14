@@ -38,7 +38,7 @@ const NavItem = ({name, link,state , index}) =>{
   const {active, setActive} = useGlobalContext()
   return (
     <li
-    id={index}
+    key={index}
       className={`nav-item  ${state ? "" : "show"}  ${
         active === index ? "current" : ""
       }`}

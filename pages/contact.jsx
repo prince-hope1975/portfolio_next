@@ -1,6 +1,11 @@
 import Head from "next/head";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import {
+  AiOutlineMail,
+  AiOutlineWhatsApp,
+  AiOutlinePhone,
+} from "react-icons/ai";
 
 const Contact = () => {
   return (
@@ -13,7 +18,7 @@ const Contact = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-        <Header/>
+      <Header />
       <main>
         <main id="contact">
           <h1 className="lg-heading">
@@ -23,21 +28,30 @@ const Contact = () => {
           <h2 className="sm-heading">This is how you can reach me...</h2>
           <div className="boxes">
             <div>
-              <span className="text-secondary">Email: </span> johndoe@test.com
+              <a href="mailto:amachreeprince8@gmail.com" target="_blank">
+                <span className="text-secondary">
+                  Email:{" "}
+                </span>
+                  <AiOutlineMail />
+              </a>
             </div>
             <div>
-              <span className="text-secondary">Phone: </span> (555) 555-5555
+              <a href="https://wa.link/8ahnkg" target="_blank">
+                <span className="text-secondary">WhatsApp: </span>
+                <AiOutlineWhatsApp />
+              </a>
             </div>
             <div>
-              <span className="text-secondary">Address: </span> 50 Main st Boston MA
-              02101
+              <a href="tel:+2348104485746" target="_blank">
+                <span className="text-secondary">Phone: </span>
+                <AiOutlinePhone />
+              </a>
             </div>
           </div>
         </main>
-<Footer />
+        <Footer />
       </main>
     </>
-
   );
 };
 export default Contact;
