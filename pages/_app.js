@@ -1,4 +1,4 @@
-import '../styles/main.css'
+import '../styles/globals.css'
 import {AppProvider} from "../context"
 
 function MyApp({ Component, pageProps }) {
