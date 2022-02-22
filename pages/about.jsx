@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Header from "../components/header";
+import Footer from "../components/footer.jsx"
 
 const About = () => {
   return (
@@ -11,7 +12,7 @@ const About = () => {
           name="description"
           content="Prince charles Amachree Portfoliio About"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/png.ico" />
       </Head>
       <Header />
       <main>
@@ -74,6 +75,7 @@ const About = () => {
 
         <footer id="main-footer">Copyright &copy; 2018</footer>
       </main>
+      <Footer />
     </>
   );
 };

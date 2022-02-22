@@ -1,6 +1,8 @@
 import Head from "next/head";
+import Image from "next/image"
 import Header from "../components/header";
 import Footer from "../components/footer";
+import styles from "../styles/Contact.module.css"
 import {
   AiOutlineMail,
   AiOutlineWhatsApp,
@@ -8,6 +10,10 @@ import {
 } from "react-icons/ai";
 
 const Contact = () => {
+
+  const handleSubmit = ()=>{
+    return
+  }
   return (
     <>
       <Head>
@@ -16,41 +22,21 @@ const Contact = () => {
           name="description"
           content="Prince charles Amachree Portfoliio About"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/png.ico" />
       </Head>
       <Header />
       <main>
-        <main id="contact">
-          <h1 className="lg-heading">
-            Contact
-            <span className="text-secondary">Me</span>
-          </h1>
-          <h2 className="sm-heading">This is how you can reach me...</h2>
-          <div className="boxes">
-            <div>
-              <a href="mailto:amachreeprince8@gmail.com" target="_blank">
-                <span className="text-secondary">
-                  Email:{" "}
-                </span>
-                  <AiOutlineMail />
-              </a>
-            </div>
-            <div>
-              <a href="https://wa.link/8ahnkg" target="_blank">
-                <span className="text-secondary">WhatsApp: </span>
-                <AiOutlineWhatsApp />
-              </a>
-            </div>
-            <div>
-              <a href="tel:+2348104485746" target="_blank">
-                <span className="text-secondary">Phone: </span>
-                <AiOutlinePhone />
-              </a>
-            </div>
-          </div>
-        </main>
-        <Footer />
+        <div className={`${styles.squiggle1}`}>
+          <Image src="/Saly-33.png" width={900} height={400} />
+        </div>
+        <div className={`${styles.squiggle2}`}>
+          <Image src="/Saly-33.png" width={700} height={300} />
+          <form onSubmit={handleSubmit}>
+
+          </form>
+        </div>
       </main>
+      <Footer />
     </>
   );
 };

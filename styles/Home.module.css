@@ -23,7 +23,7 @@
   justify-content: center;
   background: white;
   width: 2rem;
-
+cursor: pointer;
   aspect-ratio: 1/1;
 }
 
@@ -115,7 +115,7 @@
 .homeText{
   display:none
 }
-@media (max-width:450px) {
+@media (min-width : 600px) {
   .homeSvg{
     display: none;
     
@@ -127,4 +127,7 @@
 
 .invisible{
   display:none
+}
+.underline{
+  text-decoration: underline;
 }

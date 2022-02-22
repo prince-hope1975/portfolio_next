@@ -1,0 +1,13 @@
+.squiggle1,
+.squiggle2{
+    position:absolute;
+    height: 20rem;
+    width: 40rem;
+    color:white
+}
+.squiggle1{
+    right: -15rem;
+}
+.squiggle2{
+    bottom: 5rem;
+    left:-14rem}

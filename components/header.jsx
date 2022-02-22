@@ -1,25 +1,24 @@
 import Link from "next/link";
-import { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/router";
 import { AiFillHome } from "react-icons/ai";
 import { useGlobalContext } from "../context";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 const Header = () => {
-  const [state, setState] = useState(true);
-  const [active, setActive] = useState(0);
-  const ref = useRef(null);
+  const router = useRouter();
+  const {active, setActive} = useGlobalContext();
 
-  // useEffect(() => {
-  //   ref?.current?.active= true
-  // }, [])
 
-  const handletoggle = () => {
-    setState(!state);
-  };
   return (
     <header className={`${styles.header}`}>
-      <div class={styles.img}>
+      <div
+        className={styles.img}
+        onClick={() => {
+          setActive(0);
+          router.push("/");
+        }}
+      >
         <Image
           className={`${styles.image}`}
           src="/png2.png"
@@ -27,8 +26,8 @@ const Header = () => {
           height={100}
         />
       </div>
-      <nav className={` ${state ? "" : "show"}`}>
-        <ul className={`${styles["nav-menu"]} ${state ? "" : "show"}`}>
+      <nav className={` `}>
+        <ul className={`${styles["nav-menu"]} `}>
           {data.map(({ name, link, alt }, index) => {
             return (
               <NavItem
@@ -47,12 +46,12 @@ const Header = () => {
   );
 };
 
-const NavItem = ({ name, link, state, index, alt }) => {
+const NavItem = ({ name, link, index, alt }) => {
   const { active, setActive } = useGlobalContext();
   return (
     <li
       key={index}
-      className={`${styles["nav-item"]}  ${state ? "" : "show"}  ${
+      className={`${styles["nav-item"]}    ${
         active === index ? "current" : ""
       }`}
       onClick={() => {
@@ -62,7 +61,13 @@ const NavItem = ({ name, link, state, index, alt }) => {
     >
       <Link href={`/${link}`}>
         {!alt ? (
-          <a className={`${styles["home-link"]}`}>{name || "Home"}</a>
+          <a
+            className={`${styles["home-link"]} ${
+              active === index && styles.underline
+            }`}
+          >
+            {name || "Home"}
+          </a>
         ) : (
           <a className={`${styles["home-link"]}`}>
             <span className={styles.homeText}>Home</span>
