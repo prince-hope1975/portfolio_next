@@ -1,11 +1,22 @@
+:root{
+  --text-clr: hsl(280,75%,98%);
+  --header-txt: monospace
+}
+html {
+  background: hsl(276, 82%, 51%);
+}
 html,
 body {
   padding: 0;
   margin: 0;
-  background: linear-gradient(to right, purple, rgb(233, 26, 233));;
+  position: relative;
+  overflow-x: hidden;
+  background-color: linear-gradient( hsl(276, 82%, 51%), hsl(278, 91%, 27%));  ;
+  min-height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
 
 a {
   color: inherit;

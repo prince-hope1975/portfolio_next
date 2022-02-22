@@ -1,116 +1,130 @@
-.container {
-  padding: 0 2rem;
+.header {
+  color: var(--text-clr);
+  font-family: var(--header-txt);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.8rem 3rem 0 2.8rem
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+
+}
+
+.nav-item {}
+
+.img {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  width: 2rem;
+
+  aspect-ratio: 1/1;
 }
 
 .main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-}
-
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
   justify-content: center;
-  align-items: center;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
+  color: var(--text-clr);
   text-align: center;
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+.main h1 {
+  font-size: 3.5rem;
+  line-height: 3.5rem;
+
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-}
-
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+.main p {
+  font-weight: lighter;
 }
 
 .logo {
-  height: 1em;
-  margin-left: 0.5rem;
+  background: white;
+  margin-top: 11.3rem;
+  padding: .2rem;
+  border-radius: 50%;
+  border: 3px solid hsl(278, 94%, 19%);
+  padding-left: 1rem;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+.image {
+  position: absolute;
+  right: 0;
+
+}
+
+.squiggle,
+.lolipop {
+  width: 480px;
+  position: absolute;
+}
+
+.squiggle {
+  top: 8rem;
+  left: -10.5rem;
+}
+
+.lolipop {
+  top: 41rem;
+  right: -13rem;
+}
+.footer
+{
+  position: relative;
+  overflow: hidden;
+}
+.contacts {
+  margin: auto;
+  position: relative;
+  margin-top: 8rem;
+  width: 10rem;
+  justify-content: center;
+  display: flex;
+  gap: .7rem;
+  font-size: .9rem;
+  min-height: 30vh;
+  color: var(--text-clr);
+  overflow: hidden;
+
+}
+.contacts::after{
+  position: absolute;
+  border-radius: 5px;
+  top:1.9rem;
+  content: " ";
+  width: 75%;
+  height: .18rem;
+  background: white;
+}
+.end{
+  position: absolute;
+  top: -6rem;
+  left: -29rem;
+ height: 200vh;
+  width: 500vw;
+}
+
+.homeText{
+  display:none
+}
+@media (max-width:450px) {
+  .homeSvg{
+    display: none;
+    
   }
+  .homeText{
+    display: block;
+  }
+}
+
+.invisible{
+  display:none
 }
