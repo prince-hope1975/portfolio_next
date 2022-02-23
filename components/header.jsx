@@ -20,6 +20,7 @@ const Header = () => {
         }}
       >
         <Image
+        alt="Header icon"
           className={`${styles.image}`}
           src="/png2.png"
           width={90}
@@ -31,6 +32,7 @@ const Header = () => {
           {data.map(({ name, link, alt }, index) => {
             return (
               <NavItem
+              key={index}
                 alt={alt}
                 name={name}
                 link={link}

@@ -23,24 +23,22 @@ export default function Home() {
       <Header />
 
       <div className={`${styles.squiggle}`}>
-        <Image src="/Saly-30.png" width={750} height={300} />
+        <Image alt="squiggle"src="/Saly-30.png" width={750} height={300} />
       </div>
       <main className={`${styles.main}`}>
         <div className={`${styles.logo}`}>
-          <Image className={``} src="/png2.png" width={130} height={140} />
+          <Image alt="logo"className={``} src="/png2.png" width={130} height={140} />
         </div>
 
         <div className={`${styles.text}`}>
           <h1>
             Hey <br /> there !
           </h1>
-          <p>
-            I'm Prince Charles <br />
-            {"<" + "Software Developer" + "/>"}
-          </p>
+          <p>{" I'm Prince Charles"} </p>
+            <p>{"<" + "Software Developer" + "/>"}</p>
         </div>
         <div className={`${styles.lolipop}`}>
-          <Image className={``} src="/Saly-31.png" width={450} height={180} />
+          <Image alt="lolipop background" className={``} src="/Saly-31.png" width={450} height={180} />
         </div>
       </main>
       <footer className={`${styles.footer}`}>
@@ -52,7 +50,7 @@ export default function Home() {
         </div>
 
         <div className={`${styles.end}`}>
-          <Image src="/Saly-33.png" width={1600} height={800} />
+          <Image alt="wiggly linez"src="/Saly-33.png" width={1600} height={800} />
         </div>
       </footer>
     </>

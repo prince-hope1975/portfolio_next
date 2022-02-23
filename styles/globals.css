@@ -27,3 +27,16 @@ a {
 * {
   box-sizing: border-box;
 }
+::-webkit-scrollbar{
+  width: 5px
+}
+::-webkit-scrollbar-track{
+  background: rgb(226, 116, 12);
+  border-radius: 7px;
+}
+::-webkit-scrollbar-thumb{
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: #555;
+}

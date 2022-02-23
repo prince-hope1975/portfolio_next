@@ -1,19 +1,15 @@
 import Head from "next/head";
-import Image from "next/image"
+import Image from "next/image";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import styles from "../styles/Contact.module.css"
-import {
-  AiOutlineMail,
-  AiOutlineWhatsApp,
-  AiOutlinePhone,
-} from "react-icons/ai";
+import styles from "../styles/Contact.module.css";
+import { useState } from "react";
 
 const Contact = () => {
-
-  const handleSubmit = ()=>{
-    return
-  }
+  const [input, setInput] = useState({})
+  const handleSubmit = () => {
+    return;
+  };
   return (
     <>
       <Head>
@@ -25,18 +21,42 @@ const Contact = () => {
         <link rel="icon" href="/png.ico" />
       </Head>
       <Header />
-      <main>
-        <div className={`${styles.squiggle1}`}>
-          <Image src="/Saly-33.png" width={900} height={400} />
-        </div>
-        <div className={`${styles.squiggle2}`}>
-          <Image src="/Saly-33.png" width={700} height={300} />
-          <form onSubmit={handleSubmit}>
+      <main className={styles.main}>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <input required
+            type="text"
+            onChange={(e) => {
+              setInput({ ...input, name: e.target.value });
+            }}
+            placeholder="Your Name"
+          />
+          <input required
+            type="email"
+            onChange={(e) => {
+              setInput({ ...input, mail: e.target.value });
+            }}
+            placeholder="Your Email"
+          />
+          <textarea placeholder="Job Detials" height="10px"  required/>
 
-          </form>
-        </div>
+          <input type="submit" value="SUMBIT" />
+        </form>
       </main>
+      <Squiggles />
+
       <Footer />
+    </>
+  );
+};
+export const Squiggles = () => {
+  return (
+    <>
+      <div className={`${styles.squiggle1}`}>
+        <Image alt="squiggles"src="/Saly-33.png" width={900} height={400} />
+      </div>
+      <div className={`${styles.squiggle2}`}>
+        <Image alt="squiggles" src="/Saly-33.png" width={700} height={300} />
+      </div>
     </>
   );
 };

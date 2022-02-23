@@ -17,22 +17,22 @@ const About = () => {
       <Header />
       <main>
         <main id="about">
-          <h1 class="lg-heading">
+          <h1>
             About
-            <span class="text-secondary">Me</span>
+            <span >Me</span>
           </h1>
-          <h2 class="sm-heading">Let me tell you a few things...</h2>
-          <div class="about-info">
+          <h2 className="sm-heading">Let me tell you a few things...</h2>
+          <div className="about-info">
             <Image
               src="/portrait.jpg"
               height={350}
               width={100}
               alt="John Doe"
-              class="bio-image"
+              className="bio-image"
             />
 
-            <div class="bio">
-              <h3 class="text-secondary">BIO</h3>
+            <div className="bio">
+              <h3 className="text-secondary">BIO</h3>
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Deserunt magni nam nisi quae vitae? Quod molestiae ipsa autem
@@ -41,7 +41,7 @@ const About = () => {
               </p>
             </div>
 
-            <div class="job job-1">
+            <div className="job job-1">
               <h3>123 Webshop</h3>
               <h6>Full Stack Developer</h6>
               <p>
@@ -51,7 +51,7 @@ const About = () => {
               </p>
             </div>
 
-            <div class="job job-2">
+            <div className="job job-2">
               <h3>Designers ABC</h3>
               <h6>Front End Developer</h6>
               <p>
@@ -61,7 +61,7 @@ const About = () => {
               </p>
             </div>
 
-            <div class="job job-3">
+            <div className="job job-3">
               <h3>Webworks</h3>
               <h6>Graphic Designer</h6>
               <p>
