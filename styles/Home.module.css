@@ -22,7 +22,8 @@
   align-items: center;
   justify-content: center;
   background: white;
-  width: 2rem;
+  min-width: 2rem;
+  max-width: 3rem;
 cursor: pointer;
   aspect-ratio: 1/1;
 }

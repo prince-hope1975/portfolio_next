@@ -39,7 +39,7 @@ const Contact = () => {
           />
           <textarea placeholder="Job Detials" height="10px"  required/>
 
-          <input type="submit" value="SUMBIT" />
+          <input type="submit" value="SUBMIT" />
         </form>
       </main>
       <Squiggles />
