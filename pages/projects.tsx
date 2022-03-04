@@ -29,13 +29,7 @@ const Work = () => {
         <div className={styles.projects}>Projects</div>
         <div className={styles.cardSection}>
           {Data.map((data, index) => {
-            return (
-              <Card
-                key={index}
-                {...data}
-                className={`${styles.card} `}
-              />
-            );
+            return <Card key={index} {...data} className={`${styles.card} `} />;
           })}
         </div>
       </section>
@@ -49,18 +43,23 @@ const Card = ({ className, title, description, links, tools }) => {
   return (
     <div className={className}>
       <h1>{title}</h1>
-
-      {links.map(({ Logo, link }, index) => {
-        return (
-          <div className={styles.links} key={`key${index}`}>
-            <a onClick={() => router.push(link)}>
+      <div className={styles.tools}>
+        {tools.map((tool:String, index:Number)=>{
+          if (index === tools.length-1) return tool
+          return tool + " + "
+        })}
+        </div>
+      <div className={styles.links}>
+        {links.map(({ Logo, link }, index) => {
+          return (
+            <a onClick={() => router.push(link)} key={`key${index}`}>
               <Logo />
             </a>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
 
-      <p>{description.slice(0,60)}</p>
+      <p>{description.slice(0, 80)}</p>
     </div>
   );
 };
