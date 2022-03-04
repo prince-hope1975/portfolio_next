@@ -2,6 +2,10 @@ import Head from "next/head";
 import Image from "next/image";
 import Header from "../components/header";
 import Footer from "../components/footer.jsx"
+import { Squiggles } from "./contact";
+import styles from "../styles/about.module.css"
+import { Logo } from ".";
+import { Blob } from "../components/footer.jsx";
 
 const About = () => {
   return (
@@ -15,66 +19,13 @@ const About = () => {
         <link rel="icon" href="/png.ico" />
       </Head>
       <Header />
-      <main>
-        <main id="about">
-          <h1>
-            About
-            <span >Me</span>
-          </h1>
-          <h2 className="sm-heading">Let me tell you a few things...</h2>
-          <div className="about-info">
-            <Image
-              src="/portrait.jpg"
-              height={350}
-              width={100}
-              alt="John Doe"
-              className="bio-image"
-            />
+      <main className={styles.main}>
+        <Logo className={styles.logo} />
+{"I'm Prince Charles" }    
+ </main>
+      <Blob className={styles.blob}></Blob>
 
-            <div className="bio">
-              <h3 className="text-secondary">BIO</h3>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Deserunt magni nam nisi quae vitae? Quod molestiae ipsa autem
-                natus eum vel ducimus nulla harum voluptatem eligendi! Unde,
-                reiciendis? Praesentium, laborum.
-              </p>
-            </div>
-
-            <div className="job job-1">
-              <h3>123 Webshop</h3>
-              <h6>Full Stack Developer</h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptates perferendis totam enim. Nesciunt porro dolores
-                expedita dolor necessitatibus deserunt nemo.
-              </p>
-            </div>
-
-            <div className="job job-2">
-              <h3>Designers ABC</h3>
-              <h6>Front End Developer</h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptates perferendis totam enim. Nesciunt porro dolores
-                expedita dolor necessitatibus deserunt nemo.
-              </p>
-            </div>
-
-            <div className="job job-3">
-              <h3>Webworks</h3>
-              <h6>Graphic Designer</h6>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptates perferendis totam enim. Nesciunt porro dolores
-                expedita dolor necessitatibus deserunt nemo.
-              </p>
-            </div>
-          </div>
-        </main>
-
-        <footer id="main-footer">Copyright &copy; 2018</footer>
-      </main>
+      <Squiggles />
       <Footer />
     </>
   );

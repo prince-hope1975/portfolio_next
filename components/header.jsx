@@ -102,7 +102,7 @@ const data = [
     link: "projects",
   },
   {
-    name: "Contact me",
+    name: "Contact",
     link: "contact",
   },
 ];

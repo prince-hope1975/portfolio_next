@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Head from "next/head";
-import Link from "next/link"
-import {useRouter} from "next/router"
+import Link from "next/link";
+import { useRouter } from "next/router";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { Squiggles } from "./contact.jsx";
@@ -11,9 +11,9 @@ import Image from "next/image";
 
 const Work = () => {
   useEffect(() => {
-   console.log(Data)
-  }, [])
-  
+    console.log(Data);
+  }, []);
+
   return (
     <>
       <Head>
@@ -29,11 +29,13 @@ const Work = () => {
         <div className={styles.projects}>Projects</div>
         <div className={styles.cardSection}>
           {Data.map((data, index) => {
-           return <Card key=
-           {index}
-              {...data}
-              className={`${styles.card} ${index % 2 === 0 ? styles.even : styles.odd}`}
-            />;
+            return (
+              <Card
+                key={index}
+                {...data}
+                className={`${styles.card} `}
+              />
+            );
           })}
         </div>
       </section>
@@ -42,26 +44,24 @@ const Work = () => {
     </>
   );
 };
-const Card = ({ className, title, description, image, links }) => {
-  const router = useRouter()
-  return <div className={className} >
-    <h1>{title}</h1>
-   
-    <div className={styles.img}>
-      <Image alt="Project image"className={styles.image} src={image} width={200} height={100}/>
-    </div>
-      {links.map(({preview, github}, index)=>{
+const Card = ({ className, title, description, links, tools }) => {
+  const router = useRouter();
+  return (
+    <div className={className}>
+      <h1>{title}</h1>
+
+      {links.map(({ Logo, link }, index) => {
         return (
           <div className={styles.links} key={`key${index}`}>
-            <Link href={`${github}`}>
-              <a>Github</a> 
-              </Link>
-            <Link href={`${preview}`}><a>Preview</a></Link>
+            <a onClick={() => router.push(link)}>
+              <Logo />
+            </a>
           </div>
         );
       })}
 
-    <p>{description}</p>
-  </div>;
+      <p>{description.slice(0,60)}</p>
+    </div>
+  );
 };
 export default Work;

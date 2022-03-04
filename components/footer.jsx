@@ -7,7 +7,7 @@ import {
 import styles from "../styles/Footer.module.css";
 const Footer = () => {
   return (
-    <footer className={`${styles.footer}`}>
+    <Blob className={`${styles.footer}`}>
       <div className={styles.icons}>
         {" "}
         <AiFillLinkedin />
@@ -18,7 +18,12 @@ const Footer = () => {
       </div>
 
       <div className={styles.copy}>&copy; 2022 Prince Charles </div>
-    </footer>
+    </Blob>
   );
 };
+export const Blob =({className, children})=>{
+return <div className={`${styles.blob} ${className}`}>
+{children}
+</div>
+}
 export default Footer;

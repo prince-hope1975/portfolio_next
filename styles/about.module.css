@@ -1,0 +1,15 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-clr);
+    text-align: center;
+}
+.logo{
+    margin-top: 10rem;
+}
+.blob{
+    height: 20rem;
+    background: rgb(243, 235, 235)
+}

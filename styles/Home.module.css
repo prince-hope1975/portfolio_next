@@ -49,11 +49,13 @@ cursor: pointer;
 
 .logo {
   background: white;
-  margin-top: 11.3rem;
   padding: .2rem;
   border-radius: 50%;
   border: 3px solid hsl(278, 94%, 19%);
   padding-left: 1rem;
+}
+.homeLogo{
+  margin-top: 11.3rem;
 }
 
 .image {

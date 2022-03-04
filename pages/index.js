@@ -26,9 +26,7 @@ export default function Home() {
         <Image alt="squiggle"src="/Saly-30.png" width={750} height={300} />
       </div>
       <main className={`${styles.main}`}>
-        <div className={`${styles.logo}`}>
-          <Image alt="logo"className={``} src="/png2.png" width={130} height={140} />
-        </div>
+      <Logo className={styles.homeLogo}/>
 
         <div className={`${styles.text}`}>
           <h1>
@@ -56,3 +54,8 @@ export default function Home() {
     </>
   );
 }
+export const Logo = ({className}) => (
+  <div className={`${styles.logo} ${className}`}>
+    <Image alt="logo" className={``} src="/png2.png" width={130} height={140} />
+  </div>
+);
