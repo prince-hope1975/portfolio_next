@@ -3,15 +3,27 @@ import Image from "next/image";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import styles from "../styles/Contact.module.css";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import gsap from "gsap";
 
 const Contact = () => {
+  const index = 3
   const [input, setInput] = useState({})
   const handleSubmit = () => {
     return;
   };
+     const ref = useRef();
+     const [tl, setTl] = useState(gsap.timeline({ paused: false }));
+
+     useEffect(() => {
+       tl.from(ref.current, {
+         x: `${Number(Math.random().toFixed()) > 0.5 ? "+" : "-"}=60`,
+         opacity: 0,
+         duration: 0.3,
+       });
+     }, []);
   return (
-    <>
+    <div ref={ref}>
       <Head>
         <title>Contact Me</title>
         <meta
@@ -45,7 +57,7 @@ const Contact = () => {
       <Squiggles />
 
       <Footer />
-    </>
+    </div>
   );
 };
 export const Squiggles = () => {

@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -10,12 +11,25 @@ import Data from "../components/ProjectsData";
 import Image from "next/image";
 
 const Work = () => {
+  const index = 2
+    const ref = useRef();
+    const [tl, setTl] = useState(gsap.timeline({ paused: false }));
+
+    useEffect(() => {
+      tl.from(ref.current, {
+        x: `${Number(Math.random().toFixed()) > 0.5 ? "+" : "-"}=60`,
+        opacity: 0,
+        delay:0.1,
+        duration: 0.3,
+      });
+    }, []);
   useEffect(() => {
     console.log(Data);
   }, []);
 
+
   return (
-    <>
+    <div ref={ref}>
       <Head>
         <title>My Work</title>
         <meta
@@ -35,7 +49,7 @@ const Work = () => {
       </section>
       <Squiggles />
       <Footer />
-    </>
+    </div>
   );
 };
 const Card = ({ className, title, description, links, tools }) => {
