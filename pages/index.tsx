@@ -64,10 +64,10 @@ export default function Home() {
           <p>{"<" + "Software Developer" + "/>"}</p>
         </div>
         <p>
-          I'm a frontend developer. I create interactive experiences for amazing
+         {` I'm a frontend developer. I create interactive experiences for amazing
           people using modern web technology. I am currently learning how to
           write immersive web animations and also exploring the decentralized
-          web.
+          web.`}
         </p>
         <div className={`${styles.lolipop}`}>
           <Image
