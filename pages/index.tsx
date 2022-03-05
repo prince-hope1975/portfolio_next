@@ -28,18 +28,6 @@ export default function Home() {
     });
    
   }, []);
-  //  useEffect(() => {
-  //    if (typeof window !== "undefined") {
-  //      gsap.registerPlugin(ScrollTrigger);
-  //    }
-  //    timeline.from(`.${styles.homeLogo}`, {
-  //      transform:300,
-  //      duration: 2,
-
-  //      stagger: 0.25,
-  //      scrollTrigger: { trigger: `.${styles.main}`, markers: true },
-  //    });
-  //  }, []);
 
   return (
     <div ref={ref}>
@@ -60,14 +48,15 @@ export default function Home() {
         <Logo className={styles.homeLogo} />
 
         <div className={`${styles.text}`}>
-          <h1>Hello, I'm Prince Amachree</h1>
+          <h1>{`Hello, I\'m Prince Amachree`}</h1>
           <p>{"<" + "Software Developer" + "/>"}</p>
         </div>
         <p>
-         {` I'm a frontend developer. I create interactive experiences for amazing
+          {` I\'m a frontend developer. I create interactive experiences for amazing
           people using modern web technology. I am currently learning how to
           write immersive web animations and also exploring the decentralized
           web.`}
+          
         </p>
         <div className={`${styles.lolipop}`}>
           <Image
