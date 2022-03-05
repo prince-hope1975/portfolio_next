@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import { Squiggles } from "./contact.jsx";
+import { Squiggles } from "./contact";
 import styles from "../styles/Project.module.css";
 import Data from "../components/ProjectsData";
 import Image from "next/image";
@@ -29,7 +29,7 @@ const Work = () => {
 
 
   return (
-    <div ref={ref}>
+    <>
       <Head>
         <title>My Work</title>
         <meta
@@ -39,7 +39,7 @@ const Work = () => {
         <link rel="icon" href="/png.ico" />
       </Head>
       <Header />
-      <section className={`${styles.section}`}>
+      <section ref={ref} className={`${styles.section}`}>
         <div className={styles.projects}>Projects</div>
         <div className={styles.cardSection}>
           {Data.map((data, index) => {
@@ -49,7 +49,7 @@ const Work = () => {
       </section>
       <Squiggles />
       <Footer />
-    </div>
+    </>
   );
 };
 const Card = ({ className, title, description, links, tools }) => {

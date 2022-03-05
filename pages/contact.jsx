@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import Header from "../components/header";
+import Header from "../components/header.tsx";
 import Footer from "../components/footer";
 import styles from "../styles/Contact.module.css";
 import { useState, useRef, useEffect } from "react";

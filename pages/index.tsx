@@ -4,6 +4,7 @@ import Image from "next/image";
 import Header from "../components/header";
 import styles from "../styles/Home.module.css";
 import gsap from "gsap";
+import { Squiggles } from "./contact";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useInView } from "react-intersection-observer";
 
@@ -13,11 +14,12 @@ import {
   AiFillGithub,
   AiFillMail,
 } from "react-icons/ai";
+import { useGlobalContext } from "../context";
 
 export default function Home() {
   const index= 0
-  // const {ref, inView:isInView} =useInView()
   const [tl, setTl] = useState(gsap.timeline({ paused: false }));
+  const {theme, setTheme} = useGlobalContext()
   const ref = useRef();
 
   useEffect(() => {
@@ -41,11 +43,11 @@ export default function Home() {
       </Head>
       <Header />
 
-      <div className={`${styles.squiggle}`}>
-        <Image alt="squiggle" src="/Saly-30.png" width={750} height={300} />
-      </div>
+     {theme ==="purple" && <div className={`${styles.squiggle}`}>
+        <Image alt="squiggle" src="/Saly-30.png" width={750} height={250} />
+      </div>}
       <main className={`${styles.main}`}>
-        <Logo className={styles.homeLogo} />
+        <Logo className={`${styles.homeLogo} ${theme==="dark" && styles.darkImg}`} />
 
         <div className={`${styles.text}`}>
           <h1>{`Hello, I\'m Prince Amachree`}</h1>
@@ -58,7 +60,7 @@ export default function Home() {
           web.`}
           
         </p>
-        <div className={`${styles.lolipop}`}>
+       {theme === "purple "&& <div className={`${styles.lolipop}`}>
           <Image
             alt="lolipop background"
             className={``}
@@ -66,7 +68,7 @@ export default function Home() {
             width={450}
             height={180}
           />
-        </div>
+        </div>}
       </main>
       <footer className={`${styles.footer}`}>
         <div className={styles.contacts}>
@@ -85,6 +87,7 @@ export default function Home() {
           />
         </div>
       </footer>
+      
     </div>
   );
 }

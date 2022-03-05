@@ -26,7 +26,7 @@ const About = () => {
     });
   }, []);
   return (
-    <div ref={ref}>
+    <>
       <Head>
         <title>About Me</title>
         <meta
@@ -36,15 +36,15 @@ const About = () => {
         <link rel="icon" href="/png.ico" />
       </Head>
       <Header />
-      <main className={styles.main}>
+      <main className={styles.main} div ref={ref}>
         <Logo className={styles.logo} />
-{"I'm Prince Charles" }    
- </main>
+        {"I'm Prince Charles"}
+      </main>
       <Blob className={styles.blob}></Blob>
 
       <Squiggles />
       <Footer />
-    </div>
+    </>
   );
 };
 export default About;
