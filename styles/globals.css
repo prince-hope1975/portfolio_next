@@ -2,8 +2,9 @@
   --bg: rgb(21,21,21);
   --bg-purple:hsl(276, 82%, 51%);
   --linear-purple:linear-gradient(hsl(276, 82%, 51%), hsl(278, 91%, 27%));;
-  --text-clr: hsl(280,75%,98%);
-  --header-txt: monospace
+  --text-clr: hsl(0,0%,81%);
+  --header-txt: monospace;
+  --border-clr:rgb(226, 116, 12)
 }
 html {
   background: var(--bg)

@@ -38,7 +38,6 @@ cursor: pointer;
 }
 
 .main h1 {
-  font-size: 3.5rem;
   line-height: 3.5rem;
 
 }
@@ -48,14 +47,15 @@ cursor: pointer;
 }
 
 .logo {
-  background: white;
+  background: hsl(0, 0%, 71%);
   padding: .2rem;
   border-radius: 50%;
-  border: 3px solid hsl(278, 94%, 19%);
   padding-left: 1rem;
+  z-index: 2;
+  /* filter: grayscale(1); */
 }
 .homeLogo{
-  margin-top: 11.3rem;
+  margin-top: 4.3rem;
 }
 
 .image {

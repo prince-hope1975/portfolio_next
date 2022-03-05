@@ -40,9 +40,7 @@ export default function Home() {
   //      scrollTrigger: { trigger: `.${styles.main}`, markers: true },
   //    });
   //  }, []);
-  const handleAnimation = (e: any, config: object) => {
-    gsap.from(e.target, config);
-  };
+
   return (
     <div ref={ref}>
       <Head>
@@ -63,7 +61,7 @@ export default function Home() {
 
         <div className={`${styles.text}`}>
           <h1>
-            Hey <br /> there !
+            Hey, I'm Prince  Amachree
           </h1>
           <p>{" I'm Prince Charles"} </p>
           <p>{"<" + "Software Developer" + "/>"}</p>
