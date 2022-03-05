@@ -19,21 +19,21 @@ const Header = () => {
 
   const handleModal = () => {
       if (!isModalOpen) {
-        setModal(true);
         gsap.to(burger1.current, { rotate: "45deg", y: "15", width: "2rem" });
         gsap.to(burger2.current, { rotate: "-45deg" });
-      gsap.to(modal.current, { y: "105vh", opacity:1, duration:.6, display:"flex" });
+        gsap.to(modal.current, { y: "105vh", opacity:1, duration:.6, display:"flex" });
+        setModal(true);
 
       }
       if (isModalOpen) {
-        setModal(false);
         gsap.to(burger1.current, {
           rotate: "0",
           y: "-3",
           width: "3rem",
         });
         gsap.to(burger2.current, { rotate: "+0" });
-      gsap.to(modal.current, { y: "-105vh",display:"none", opacity: 0, duration: 0.1});
+        gsap.to(modal.current, { y: "-105vh",display:"none", opacity: 0, duration: 0.1});
+        setModal(false);
 
       }
 
@@ -46,11 +46,7 @@ const Header = () => {
       duration: 0.3,
     });
   }, []);
-  useEffect(() => {
-    if (isModalOpen) {
-    } else {
-    }
-  }, [isModalOpen]);
+ 
 
   return (
     <header className={`${styles.header}`}>
