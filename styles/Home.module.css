@@ -14,8 +14,6 @@
 
 }
 
-.nav-item {}
-
 .img {
   border-radius: 50%;
   display: flex;
@@ -29,6 +27,8 @@ cursor: pointer;
 }
 
 .main {
+  width: clamp(300px, 80%, 500px);
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,11 +39,13 @@ cursor: pointer;
 
 .main h1 {
   line-height: 3.5rem;
-
+  font-size: 1.5rem;
 }
 
 .main p {
   font-weight: lighter;
+  font-size: .8rem;
+  text-align: center;
 }
 
 .logo {
@@ -52,7 +54,7 @@ cursor: pointer;
   border-radius: 50%;
   padding-left: 1rem;
   z-index: 2;
-  /* filter: grayscale(1); */
+  filter: grayscale(0.5);
 }
 .homeLogo{
   margin-top: 4.3rem;
@@ -76,27 +78,27 @@ cursor: pointer;
 }
 
 .lolipop {
-  top: 41rem;
+  bottom:  3rem;
   right: -13rem;
+  z-index: -1;
 }
 .footer
 {
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden;/ */
 }
 .contacts {
   margin: auto;
   position: relative;
-  margin-top: 8rem;
+  margin-top: 1rem;
   width: 10rem;
   justify-content: center;
   display: flex;
   gap: .7rem;
   font-size: .9rem;
-  min-height: 30vh;
+  min-height: 5vh;
   color: var(--text-clr);
   overflow: hidden;
-
 }
 .contacts::after{
   position: absolute;
@@ -109,10 +111,10 @@ cursor: pointer;
 }
 .end{
   position: absolute;
-  top: -6rem;
-  left: -29rem;
- height: 200vh;
-  width: 500vw;
+  /* bottom: 0rem; */
+  /* left: -29rem; */
+ /* height: 200vh; */
+  /* width: 500vw; */
 }
 
 .homeText{

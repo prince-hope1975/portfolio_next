@@ -60,12 +60,15 @@ export default function Home() {
         <Logo className={styles.homeLogo} />
 
         <div className={`${styles.text}`}>
-          <h1>
-            Hey, I'm Prince  Amachree
-          </h1>
-          <p>{" I'm Prince Charles"} </p>
+          <h1>Hello, I'm Prince Amachree</h1>
           <p>{"<" + "Software Developer" + "/>"}</p>
         </div>
+        <p>
+          I'm a frontend developer. I create interactive experiences for amazing
+          people using modern web technology. I am currently learning how to
+          write immersive web animations and also exploring the decentralized
+          web.
+        </p>
         <div className={`${styles.lolipop}`}>
           <Image
             alt="lolipop background"
