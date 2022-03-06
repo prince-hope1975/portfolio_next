@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Head from "next/head";
 import Image from "next/image";
-import Footer from "../components/footer.jsx"
+import Footer from "../components/footer"
 import { Squiggles } from "./contact";
 import styles from "../styles/about.module.css"
 import { Logo } from ".";
-import { Blob } from "../components/footer.jsx";
+import { Blob } from "../components/footer";
 import { useGlobalContext } from "../context";
 
 

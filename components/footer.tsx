@@ -4,17 +4,23 @@ import {
   AiFillGithub,
   AiFillMail,
 } from "react-icons/ai";
+import Link from "next/link";
 import styles from "../styles/Footer.module.css";
+import links from "./footerData";
 const Footer = () => {
   return (
     <Blob className={`${styles.footer}`}>
       <div className={styles.icons}>
         {" "}
-        <AiFillLinkedin />
-        <AiFillGithub />
-        <AiFillMail />
-       
-        <AiOutlineTwitter />
+        {links.map((item,index)=>{
+          const {Logo} = item
+          return (
+            <Link key={index} href={`${item.Link}`}>
+              <Logo />
+            </Link>
+          );
+        })}
+        
       </div>
 
       <div className={styles.copy}>&copy; 2022 Prince Charles </div>
