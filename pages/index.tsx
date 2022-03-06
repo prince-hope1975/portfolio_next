@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Header from "../components/header";
 import styles from "../styles/Home.module.css";
 import gsap from "gsap";
 import { Squiggles } from "./contact";
@@ -40,7 +39,6 @@ export default function Home() {
         />
         <link rel="icon" href="/png.ico" />
       </Head>
-      <Header />
 
       {theme === "purple" && (
         <div className={`${styles.squiggle}`}>
@@ -87,15 +85,8 @@ export default function Home() {
           <AiOutlineTwitter />
         </div>
 
-        <div className={`${styles.end}`}>
-          <Image
-            alt="wiggly linez"
-            src="/Saly-33.png"
-            width={1600}
-            height={800}
-          />
-        </div>
       </footer>
+      
     </div>
   );
 }

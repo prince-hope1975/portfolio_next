@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Head from "next/head";
 import Image from "next/image";
-import Header from "../components/header";
 import Footer from "../components/footer.jsx"
 import { Squiggles } from "./contact";
 import styles from "../styles/about.module.css"
@@ -35,7 +34,6 @@ const About = () => {
         />
         <link rel="icon" href="/png.ico" />
       </Head>
-      <Header />
       <main className={styles.main} div ref={ref}>
         <Logo className={styles.logo} />
         {"I'm Prince Charles"}

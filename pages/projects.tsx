@@ -3,7 +3,6 @@ import gsap from "gsap";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Header from "../components/header";
 import Footer from "../components/footer";
 import { Squiggles } from "./contact";
 import styles from "../styles/Project.module.css";
@@ -39,7 +38,6 @@ const Work = () => {
         />
         <link rel="icon" href="/png.ico" />
       </Head>
-      <Header />
       <section ref={ref} className={`${styles.section}`}>
         <div className={styles.projects}>Projects</div>
         <div className={styles.cardSection}>

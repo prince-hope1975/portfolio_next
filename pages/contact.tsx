@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Image from "next/image";
-import Header from "../components/header";
 import Footer from "../components/footer";
 import styles from "../styles/Contact.module.css";
 import { useState, useRef, useEffect } from "react";
@@ -34,7 +33,6 @@ const Contact = () => {
         />
         <link rel="icon" href="/png.ico" />
       </Head>
-      <Header />
       <main className={styles.main}>
         <form className={styles.form} onSubmit={handleSubmit}>
           <input required

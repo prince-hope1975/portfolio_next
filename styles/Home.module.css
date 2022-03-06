@@ -77,7 +77,6 @@
   justify-content: center;
   color: var(--text-clr);
   text-align: center;
-  overflow: hidden;
 }
 
 .main h1 {
@@ -180,11 +179,11 @@
 }
 
 .end {
-  position: absolute;
-  /* bottom: 0rem; */
-  /* left: -29rem; */
-  /* height: 200vh; */
-  /* width: 500vw; */
+  /* position: absolute; */
+  bottom: 0rem;
+  left: -29rem;
+  height: 200vh;
+  width: 500vw;
 }
 
 .homeText {

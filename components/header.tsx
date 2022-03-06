@@ -31,12 +31,13 @@ const Header = () => {
       setModal(!isModalOpen);
     }
     if (isModalOpen) {
-      gsap.to(burger1.current,{duration:0, 
+      gsap.to(burger1.current, {
+        duration: 0,
         rotate: "0",
         y: "-3",
         width: "3rem",
       });
-      gsap.to(burger2.current, { rotate: "+0",duration:0, });
+      gsap.to(burger2.current, { rotate: "+0", duration: 0 });
       gsap.to(modal.current, {
         y: "-105vh",
         display: "none",
@@ -53,8 +54,7 @@ const Header = () => {
       opacity: 0,
       duration: 0.3,
     });
-      setModal(false);
-
+    setModal(false);
   }, []);
 
   return (
@@ -64,12 +64,12 @@ const Header = () => {
           {data.map(({ name, link, alt }, index) => {
             return (
               <NavItem
+                handleModal={handleModal}
                 key={index}
                 alt={alt}
                 name={name}
                 link={link}
                 index={index}
-                tl={tl}
               />
             );
           })}
@@ -98,8 +98,8 @@ const Header = () => {
   );
 };
 
-const NavItem = ({ name, link, index, alt, tl }) => {
-  const { active, setActive } = useGlobalContext();
+const NavItem = ({ name, link, index, alt, handleModal }) => {
+  const { active, setActive, setModal } = useGlobalContext();
   return (
     <li
       key={index}
@@ -113,6 +113,7 @@ const NavItem = ({ name, link, index, alt, tl }) => {
       <Link href={`/${link}`}>
         {!alt ? (
           <a
+            onClick={handleModal}
             className={`${styles["home-link"]} ${
               active === index && styles.underline
             }`}
