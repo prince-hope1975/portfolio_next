@@ -17,7 +17,7 @@ const Work = () => {
     const [tl, setTl] = useState(gsap.timeline({ paused: false }));
 
     useEffect(() => {
-      tl.from(ref.current, {
+      gsap.from(ref.current, {
         x: `${Number(Math.random().toFixed()) > 0.5 ? "+" : "-"}=60`,
         opacity: 0,
         delay:0.1,

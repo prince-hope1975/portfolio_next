@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import Header from "../components/header.tsx";
+import Header from "../components/header";
 import Footer from "../components/footer";
 import styles from "../styles/Contact.module.css";
 import { useState, useRef, useEffect } from "react";
@@ -51,7 +51,7 @@ const Contact = () => {
             }}
             placeholder="Your Email"
           />
-          <textarea placeholder="Job Detials" height="10px"  required/>
+          <textarea placeholder="Job Detials" required/>
 
           <input type="submit" value="SUBMIT" />
         </form>

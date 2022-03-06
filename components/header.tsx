@@ -31,12 +31,12 @@ const Header = () => {
       setModal(!isModalOpen);
     }
     if (isModalOpen) {
-      gsap.to(burger1.current, {
+      gsap.to(burger1.current,{duration:0, 
         rotate: "0",
         y: "-3",
         width: "3rem",
       });
-      gsap.to(burger2.current, { rotate: "+0" });
+      gsap.to(burger2.current, { rotate: "+0",duration:0, });
       gsap.to(modal.current, {
         y: "-105vh",
         display: "none",
