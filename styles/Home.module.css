@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1.4rem;
   z-index: 9;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .main {
-  width: clamp(300px, 80%, 500px);
+  width: clamp(300px, 90%, 600px);
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -82,26 +82,45 @@
 }
 
 .main h1 {
+  color: white;
   line-height: 3.5rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  padding: 0;
+  margin: 0;
 }
 
 .main p {
   font-weight: lighter;
-  font-size: .8rem;
   text-align: center;
+  margin: 0;
+  margin-bottom: .2rem;
+  line-height: 3ch;
+}
+.software_font{
+  font-size: 1.3rem;
+  color: white;
+  font-weight: bold;
+}
+.desc{
+  color:hsl(0, 0%, 51%)
+}
+.span{
+  color: white
 }
 
 .logo {
   background: hsl(0, 0%, 71%);
   padding: .2rem;
   border-radius: 50%;
+  border-top-left-radius: 30%;
+  border-bottom-right-radius:30% ;
   padding-left: 1rem;
   z-index: -1;
 }
 
 .homeLogo {
-  margin-top: 4.3rem;
+  margin-top: 6.3rem;
 }
 
 .image {

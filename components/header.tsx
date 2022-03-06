@@ -14,29 +14,37 @@ const Header = () => {
   const router = useRouter();
   const { active, setActive } = useGlobalContext();
   const [tl, setTl] = useState(gsap.timeline({ paused: false }));
-  const {isModalOpen, setModal} = useGlobalContext();
+  const { isModalOpen, setModal } = useGlobalContext();
   const ref = useRef();
 
   const handleModal = () => {
-      if (!isModalOpen) {
-        gsap.to(burger1.current, { rotate: "45deg", y: "15", width: "2rem" });
-        gsap.to(burger2.current, { rotate: "-45deg" });
-        gsap.to(modal.current, { y: "105vh", opacity:1, duration:.6, display:"flex" });
-        setModal(true);
-
-      }
-      if (isModalOpen) {
-        gsap.to(burger1.current, {
-          rotate: "0",
-          y: "-3",
-          width: "3rem",
-        });
-        gsap.to(burger2.current, { rotate: "+0" });
-        gsap.to(modal.current, { y: "-105vh",display:"none", opacity: 0, duration: 0.1});
-        setModal(false);
-
-      }
-
+    console.log(isModalOpen);
+    if (!isModalOpen) {
+      gsap.to(burger1.current, { rotate: "45deg", y: "15", width: "2rem" });
+      gsap.to(burger2.current, { rotate: "-45deg" });
+      gsap.to(modal.current, {
+        y: "105vh",
+        opacity: 1,
+        duration: 0.6,
+        display: "flex",
+      });
+      setModal(!isModalOpen);
+    }
+    if (isModalOpen) {
+      gsap.to(burger1.current, {
+        rotate: "0",
+        y: "-3",
+        width: "3rem",
+      });
+      gsap.to(burger2.current, { rotate: "+0" });
+      gsap.to(modal.current, {
+        y: "-105vh",
+        display: "none",
+        opacity: 0,
+        duration: 0.1,
+      });
+      setModal(!isModalOpen);
+    }
   };
 
   useEffect(() => {
@@ -45,8 +53,9 @@ const Header = () => {
       opacity: 0,
       duration: 0.3,
     });
+      setModal(false);
+
   }, []);
- 
 
   return (
     <header className={`${styles.header}`}>

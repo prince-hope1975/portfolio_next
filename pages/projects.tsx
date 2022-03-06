@@ -9,9 +9,10 @@ import { Squiggles } from "./contact";
 import styles from "../styles/Project.module.css";
 import Data from "../components/ProjectsData";
 import Image from "next/image";
+import { useGlobalContext } from "../context";
 
 const Work = () => {
-  const index = 2
+  const { setModal} = useGlobalContext()
     const ref = useRef();
     const [tl, setTl] = useState(gsap.timeline({ paused: false }));
 
@@ -22,10 +23,10 @@ const Work = () => {
         delay:0.1,
         duration: 0.3,
       });
+      setModal(false)
     }, []);
-  useEffect(() => {
-    console.log(Data);
-  }, []);
+  // useEffect(() => {
+  // }, []);
 
 
   return (
@@ -54,6 +55,7 @@ const Work = () => {
 };
 const Card = ({ className, title, description, links, tools }) => {
   const router = useRouter();
+  const {setModal, isModalOpen} = useGlobalContext()
   return (
     <div className={className}>
       <h1>{title}</h1>
@@ -66,7 +68,10 @@ const Card = ({ className, title, description, links, tools }) => {
       <div className={styles.links}>
         {links.map(({ Logo, link }, index) => {
           return (
-            <a onClick={() => router.push(link)} key={`key${index}`}>
+            <a onClick={() => {
+              router.push(link);
+              
+            }} key={`key${index}`}>
               <Logo />
             </a>
           );

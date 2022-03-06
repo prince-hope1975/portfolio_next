@@ -17,9 +17,8 @@ import {
 import { useGlobalContext } from "../context";
 
 export default function Home() {
-  const index= 0
   const [tl, setTl] = useState(gsap.timeline({ paused: false }));
-  const {theme, setTheme} = useGlobalContext()
+  const {theme, setTheme, setModal} = useGlobalContext()
   const ref = useRef();
 
   useEffect(() => {
@@ -28,7 +27,7 @@ export default function Home() {
       opacity: 0,
       duration: 0.3,
     });
-   
+   setModal(false)
   }, []);
 
   return (
@@ -43,32 +42,40 @@ export default function Home() {
       </Head>
       <Header />
 
-     {theme ==="purple" && <div className={`${styles.squiggle}`}>
-        <Image alt="squiggle" src="/Saly-30.png" width={750} height={250} />
-      </div>}
+      {theme === "purple" && (
+        <div className={`${styles.squiggle}`}>
+          <Image alt="squiggle" src="/Saly-30.png" width={750} height={250} />
+        </div>
+      )}
       <main className={`${styles.main}`}>
-        <Logo className={`${styles.homeLogo} ${theme==="dark" && styles.darkImg}`} />
+        <Logo
+          className={`${styles.homeLogo} ${theme === "dark" && styles.darkImg}`}
+        />
 
         <div className={`${styles.text}`}>
           <h1>{`Hello, I\'m Prince Amachree`}</h1>
-          <p>{"<" + "Software Developer" + "/>"}</p>
+          <p className={styles.software_font}>
+            {"<" + "Software Developer" + "/>"}
+          </p>
         </div>
-        <p>
-          {` I\'m a frontend developer. I create interactive experiences for amazing
-          people using modern web technology. I am currently learning how to
-          write immersive web animations and also exploring the decentralized
-          web.`}
-          
+        <p className={styles.desc}>
+          {`I\'m `}a <span className={styles.span}>Software developer</span>. I create interactive <span className={styles.span}>experiences</span> for
+          amazing people using modern web technology.
+          I create <span className={styles.span}>Backend systems</span> that help drive critical infrastructure necessary for the <span className={styles.span}>modern web</span>.
+           I am currently into
+          building immersive web <span className={styles.span}>animations</span> and also exploring deploying <span className={styles.span}>DApps</span> on the <span className={styles.span}>decentralized</span> web.
         </p>
-       {theme === "purple "&& <div className={`${styles.lolipop}`}>
-          <Image
-            alt="lolipop background"
-            className={``}
-            src="/Saly-31.png"
-            width={450}
-            height={180}
-          />
-        </div>}
+        {theme === "purple " && (
+          <div className={`${styles.lolipop}`}>
+            <Image
+              alt="lolipop background"
+              className={``}
+              src="/Saly-31.png"
+              width={450}
+              height={180}
+            />
+          </div>
+        )}
       </main>
       <footer className={`${styles.footer}`}>
         <div className={styles.contacts}>
@@ -87,7 +94,6 @@ export default function Home() {
           />
         </div>
       </footer>
-      
     </div>
   );
 }

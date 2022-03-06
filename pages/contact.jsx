@@ -5,9 +5,10 @@ import Footer from "../components/footer";
 import styles from "../styles/Contact.module.css";
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
+import { useGlobalContext } from "../context";
 
 const Contact = () => {
-  const index = 3
+  const {setModal} = useGlobalContext()
   const [input, setInput] = useState({})
   const handleSubmit = () => {
     return;
@@ -21,6 +22,7 @@ const Contact = () => {
          opacity: 0,
          duration: 0.3,
        });
+       setModal(false)
      }, []);
   return (
     <div ref={ref}>

@@ -12,10 +12,9 @@ import { useGlobalContext } from "../context";
 
 
 const About = () => {
-  const index =1
   const ref = useRef();
   const [tl, setTl] = useState(gsap.timeline({ paused: false }));
-  const {active} = useGlobalContext()
+  const {active, setModal} = useGlobalContext()
 
 
   useEffect(() => {
@@ -24,6 +23,7 @@ const About = () => {
       opacity: 0,
       duration: 0.3,
     });
+    setModal(false)
   }, []);
   return (
     <>
