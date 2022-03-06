@@ -95,3 +95,11 @@ a {
     }
 
 }
+@media (max-width: 450px) {
+  .cursor{
+    display: none;
+  }
+  .cursor-follower{
+    display: none;
+  }
+}
