@@ -11,7 +11,7 @@
 }
 
 .nav-menu {
-  font-size: 1.2rem;
+  font-size: 18px;
   position: absolute;
   left: 0;
   top: -100vh;
@@ -84,7 +84,7 @@
 .main h1 {
   color: white;
   line-height: 3.5rem;
-  font-size: 1.8rem;
+  font-size: 30px;
   font-weight: bolder;
   padding: 0;
   margin: 0;
@@ -98,7 +98,7 @@
   line-height: 3ch;
 }
 .software_font{
-  font-size: 1.3rem;
+  font-size: 17px;
   color: white;
   font-weight: bold;
 }
@@ -160,7 +160,7 @@
   justify-content: center;
   display: flex;
   gap: .7rem;
-  font-size: .9rem;
+  font-size: 14px;
   min-height: 5vh;
   color: var(--text-clr);
   overflow: hidden;
@@ -205,4 +205,16 @@
 
 .underline {
   text-decoration: underline;
+}
+@media (max-width: 350px) {
+  
+
+  .software_font {
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+  }
+  .desc{
+    font-size: 12px;
+  }
 }
