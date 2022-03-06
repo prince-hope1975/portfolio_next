@@ -53,7 +53,7 @@ export default function Home() {
         />
 
         <div className={`${styles.text}`}>
-          <h1>{`Hello, I\'m Prince Amachree`}</h1>
+          <h1>{`Hello, I\'m Prince Charles`}</h1>
         </div>
         <p className={styles.desc}>
           {`I\'m`} a <span className={styles.span}>Software developer</span>. I
