@@ -29,6 +29,20 @@ const Cursor = () => {
       },
     });
   }, [mouseX, mouseY]);
+
+  useLayoutEffect(()=>{
+    document.querySelectorAll("a").forEach(item=>{
+      item.addEventListener("mouseenter",()=>{
+        cursor.current.classList.add("active")
+        cursor_follower.current.classList.add("active");
+      })
+       item.addEventListener("mouseleave", () => {
+         cursor.current.classList.remove("active");
+         cursor_follower.current.classList.remove("active");
+       });
+    
+    })
+  },[])
   const cursor = useRef();
   const cursor_follower = useRef();
 
