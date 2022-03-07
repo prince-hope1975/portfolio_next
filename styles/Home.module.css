@@ -148,10 +148,12 @@
   right: -13rem;
   z-index: -1;
 }
+.display{
+  display: none;
+}
 
 .footer {
   position: relative;
-  /* overflow: hidden;/ */
 }
 
 .contacts {
@@ -165,7 +167,6 @@
   font-size: 14px;
   min-height: 5vh;
   color: var(--text-clr);
-  overflow: hidden;
 }
 
 .contacts::after {
@@ -177,6 +178,25 @@
   height: .18rem;
   background: white;
 }
+.explore{
+  margin: auto;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: hsl(0, 0%, 14%);
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap:3px;
+}
+.explore svg{
+  transition: transform ease-in-out 300ms;
+
+}
+.explore:hover svg{
+  transform: scale(1.3);
+  transform: translateX(5px);
+
+} 
 
 .end {
   /* position: absolute; */
@@ -191,6 +211,9 @@
 }
 
 @media (min-width : 600px) {
+  .display{
+    display: block;
+  }
   .homeSvg {
     display: none;
 

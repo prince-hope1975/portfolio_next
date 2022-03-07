@@ -3,19 +3,20 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import gsap from "gsap";
+import Link from "next/link";
+import links from "../components/footerData";
+import { useRouter } from "next/router";
 import { Squiggles } from "./contact";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useInView } from "react-intersection-observer";
 
 import {
-  AiOutlineTwitter,
-  AiFillLinkedin,
-  AiFillGithub,
-  AiFillMail,
+  AiOutlineArrowRight
 } from "react-icons/ai";
 import { useGlobalContext } from "../context";
 
 export default function Home() {
+  const router = useRouter()
   const [tl, setTl] = useState(gsap.timeline({ paused: false }));
   const { theme, setTheme, setModal } = useGlobalContext();
   const ref = useRef();
@@ -40,15 +41,13 @@ export default function Home() {
         <link rel="icon" href="/png.ico" />
       </Head>
 
-      {theme === "purple" && (
-        <div className={`${styles.squiggle}`}>
+      {false && (
+        <div className={`${styles.squiggle} ${styles.display}`}>
           <Image alt="squiggle" src="/Saly-30.png" width={750} height={250} />
         </div>
       )}
       <main className={`${styles.main}`}>
-        <Logo
-          className={`${styles.homeLogo} ${theme === "dark" && styles.darkImg}`}
-        />
+        <Logo className={`${styles.homeLogo} `} />
 
         <div className={`${styles.text}`}>
           <h1>{`Hello, I\'m Prince Charles`}</h1>
@@ -65,8 +64,8 @@ export default function Home() {
           <span className={styles.span}>DApps</span> on the{" "}
           <span className={styles.span}>decentralized</span> web.
         </p>
-        {theme === "purple " && (
-          <div className={`${styles.lolipop}`}>
+        {false && (
+          <div className={`${styles.lolipop} ${styles.display}`}>
             <Image
               alt="lolipop background"
               className={``}
@@ -79,14 +78,17 @@ export default function Home() {
       </main>
       <footer className={`${styles.footer}`}>
         <div className={styles.contacts}>
-          <AiFillLinkedin />
-          <AiFillGithub />
-          <AiFillMail />
-          <AiOutlineTwitter />
+          {links.map((item, index) => {
+            const { Logo } = item;
+            return (
+              <Link key={index} href={`${item.Link}`}>
+                <Logo />
+              </Link>
+            );
+          })}
         </div>
-
       </footer>
-      
+      <div onClick={()=>router.push("/projects")} className={styles.explore}>Explore <AiOutlineArrowRight/></div>
     </div>
   );
 }

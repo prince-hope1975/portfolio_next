@@ -1,6 +1,6 @@
 .section{
     margin: auto;
-    margin-bottom: 10rem;
+    margin-bottom: 13rem;
     padding-top: 5.8rem;
     max-width: 850px;
     display: grid;
@@ -28,10 +28,23 @@
     border-radius: 5px;
     padding: 2rem;
     display: flex;
-    background: hsl(0, 0%, 100%, 1);
+    background: #1b1b1d;
+    color:hsl(0, 0%, 100%, 1);
     flex-direction: column;
     font-family: monospace;
     text-align: left;
+}
+.card h1 {
+    color: #ffffff
+}
+.card p {
+    color: hsl(240, 1%, 30%)
+}
+.tools{
+    color: hsl(240, 1%, 50%)
+}
+.span{
+    font-size: 0.7rem;
 }
 .links{
     padding-top: 1rem;
@@ -40,18 +53,19 @@
 }
 .links a{
     font-size: 1.1rem;
-    color: hsl(0, 0%, 0%, 0.5);
+    color: hsl(240, 1%, 30%);
     border: 1px ;
     border-radius: 2px;
-    /* box-shadow: 1px 1px 1px hsl(0, 0%, 0%, 0.4); */
     padding: .2rem 1rem;
+    display: flex;
+    align-items: center;
+    gap:0.2rem;
     cursor: pointer;
     transition: all 200ms ease-in;
 }
 .links a:hover, .links a:active{
         box-shadow: 1px 1px 1px hsl(0, 0%, 0% );
-        color: hsl(0, 0%, 0%);
-
+        color: #ffffff;
 }
 .img{
     background: #000;

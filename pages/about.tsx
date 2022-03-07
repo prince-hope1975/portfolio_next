@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Head from "next/head";
-import Image from "next/image";
 import Footer from "../components/footer"
 import { Squiggles } from "./contact";
 import styles from "../styles/about.module.css"
@@ -34,14 +33,22 @@ const About = () => {
         />
         <link rel="icon" href="/png.ico" />
       </Head>
-      <main className={styles.main} div ref={ref}>
-        <Logo className={styles.logo} />
-        {"I'm Prince Charles"}
-      </main>
-      <Blob className={styles.blob}></Blob>
-
-      <Squiggles />
-      <Footer />
+      <div className={styles.container}>
+        <main className={styles.main}  ref={ref}>
+          <Logo className={styles.logo} />
+          {"I'm Prince Charles"}
+        </main>
+        <Blob className={styles.blob}>
+          <h2>BackGround</h2>
+        <p>I am a multi Discipline Engineer, with a Background in Software and Electrical Engineering</p>
+        <h2>Roots</h2>
+        <p>I have Been Into Software Development since as Far as 2018 and have gathered skills that help me create software that solves real world problems and provide value</p>
+        <h2>Tech Tools</h2>
+        <p>Javascript, React, Next.js, TypeScript, HTML, Vite, Webpack,Node, Solidity, Reach, Pyteal,</p>
+          </Blob>
+        <Squiggles />
+        <Footer />
+      </div>
     </>
   );
 };

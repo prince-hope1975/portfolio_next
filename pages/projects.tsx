@@ -12,20 +12,12 @@ import { useGlobalContext } from "../context";
 
 const Work = () => {
   const { setModal} = useGlobalContext()
-    const ref = useRef();
     const [tl, setTl] = useState(gsap.timeline({ paused: false }));
 
     useEffect(() => {
-      gsap.from(ref.current, {
-        x: `${Number(Math.random().toFixed()) > 0.5 ? "+" : "-"}=60`,
-        opacity: 0,
-        delay:0.1,
-        duration: 0.3,
-      });
+     
       setModal(false)
     }, []);
-  // useEffect(() => {
-  // }, []);
 
 
   return (
@@ -38,7 +30,7 @@ const Work = () => {
         />
         <link rel="icon" href="/png.ico" />
       </Head>
-      <section ref={ref} className={`${styles.section}`}>
+      <section className={`${styles.section}`}>
         <div className={styles.projects}>Projects</div>
         <div className={styles.cardSection}>
           {Data.map((data, index) => {
@@ -53,14 +45,13 @@ const Work = () => {
 };
 const Card = ({ className, title, description, links, tools }) => {
   const router = useRouter();
-  const {setModal, isModalOpen} = useGlobalContext()
   return (
     <div className={className}>
       <h1>{title}</h1>
       <div className={styles.tools}>
         {tools.map((tool:String, index:Number)=>{
-          if (index === tools.length-1) return tool
-          return tool + " + "
+          if (index === tools.length-1) return tool.toUpperCase()
+          return tool.toUpperCase() + " + "
         })}
         </div>
       <div className={styles.links}>
@@ -70,13 +61,13 @@ const Card = ({ className, title, description, links, tools }) => {
               router.push(link);
               
             }} key={`key${index}`}>
-              <Logo />
+              <Logo /> <span className={styles.span}>{index===0?"Live":"Code"}</span>
             </a>
           );
         })}
       </div>
 
-      <p>{description.slice(0, 80)}</p>
+      <p>{description.slice(0, 150)}</p>
     </div>
   );
 };
