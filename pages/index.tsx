@@ -88,7 +88,10 @@ export default function Home() {
           })}
         </div>
       </footer>
-      <div onClick={()=>router.push("/projects")} className={styles.explore}>Explore <AiOutlineArrowRight/></div>
+      <div onClick={() => router.push("/projects")} className={styles.explore}>
+        Explore <AiOutlineArrowRight />
+      </div>
+      <div className={styles.inspiration}>inspired By <span>Collins Enebeli</span></div>
     </div>
   );
 }

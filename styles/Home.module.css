@@ -197,6 +197,16 @@
   transform: translateX(5px);
 
 } 
+.inspiration{
+  text-align: center;
+  font-size: 0.85rem;
+  padding-top: 3rem;
+  color: hsl(0, 0%, 20%);
+}
+.inspiration span{
+  color: hsl(0, 0%, 50%);
+
+}
 
 .end {
   /* position: absolute; */
