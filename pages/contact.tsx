@@ -49,7 +49,7 @@ const Contact = () => {
             }}
             placeholder="Your Email"
           />
-          <textarea placeholder="Job Detials" required/>
+          <textarea placeholder="Job Details" required/>
 
           <input type="submit" value="SUBMIT" />
         </form>
