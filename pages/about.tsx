@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
 import Head from "next/head";
 import Footer from "../components/footer"
 import { Squiggles } from "./contact";
@@ -42,7 +41,7 @@ const About = () => {
           <h2>BackGround</h2>
         <p>I am a multi Discipline Engineer, with a Background in Software and Electrical Engineering</p>
         <h2>Roots</h2>
-        <p>I have Been Into Software Development since 2018 and have gathered skills that help me create software that solves real world problems and provide value</p>
+        <p>I have Been Into Software Development sinceIs 2018 and have gathered skills that help me create software that solves real world problems and provide value</p>
         <h2>Tech Tools</h2>
         <p>Javascript, React, Next.js, TypeScript, HTML, Vite, Webpack,Node, Solidity, Reach, Pyteal,</p>
           </Blob>

@@ -1,262 +1,54 @@
-.header {
-  color: var(--text-clr);
-  font-family: var(--header-txt);
-  position: absolute;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  z-index: 9;
-}
-
-.nav-menu {
-  font-size: 18px;
-  position: absolute;
-  left: 0;
-  top: -100vh;
-  width: 100%;
-  display: flex;
-  padding-top: 4rem;
-  padding-left: 1rem;
-  flex-direction: column;
-  align-items: center;
-  background: var(--bg);
-  min-height: 100vh;
-  gap: 2rem;
-  list-style: none;
-  opacity: 0;
-}
-
-.burger {
-  width: 3rem;
-  height: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.burger1,
-.burger2 {
-  background: white;
-  height: .08rem;
-}
-
-.burger1 {
-  width: 3rem;
-}
-
-.burger2 {
-  width: 2rem
-}
-
-.img {
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  max-width: 2rem;
-  cursor: pointer;
-  aspect-ratio: 1/1;
-  z-index: 1;
-}
-
-.darkImg {
-  /* filter: grayscale(1); */
-}
-
 .main {
-  width: clamp(300px, 90%, 600px);
-  margin: auto;
+  min-height: 90vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  color: var(--text-clr);
-  text-align: center;
-}
-
-.main h1 {
-  color: white;
-  line-height: 40px;
-  font-size: 30px;
-  font-weight: bolder;
-  padding: 0;
-  margin: 0;
-  width: max-content;
-}
-
-.main p {
-  font-weight: lighter;
-  text-align: center;
-  margin: 0;
-  margin-bottom: .2rem;
-  line-height: 3ch;
-}
-
-.software_font {
-  font-size: 17px;
-  color: white;
-  font-weight: bold;
-}
-
-.desc {
-  color: hsl(0, 0%, 51%)
-}
-
-.span {
-  color: white
-}
-
-.logo {
-  background: hsl(0, 0%, 71%);
-  padding: .2rem;
-  border-radius: 50%;
-  border-top-left-radius: 30%;
-  border-bottom-right-radius: 30%;
-  padding-left: 1rem;
-  z-index: -1;
-}
-
-.homeLogo {
-  margin-top: 5.3rem;
-}
-
-.image {
-  position: absolute;
-  right: 0;
-  z-index: 2;
-
-}
-
-.squiggle,
-.lolipop {
-  width: 480px;
-  position: absolute;
-}
-
-.squiggle {
-  top: 8rem;
-  left: -10.5rem;
-}
-
-.lolipop {
-  bottom: 3rem;
-  right: -13rem;
-  z-index: -1;
-}
-.display{
-  display: none;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .footer {
-  position: relative;
-}
-
-.contacts {
-  margin: auto;
-  position: relative;
-  margin-top: 1rem;
-  width: 10rem;
+  display: flex;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
   justify-content: center;
-  display: flex;
-  gap: .7rem;
-  font-size: 14px;
-  min-height: 5vh;
-  color: var(--text-clr);
-}
-
-.contacts::after {
-  position: absolute;
-  border-radius: 5px;
-  top: 1.9rem;
-  content: " ";
-  width: 75%;
-  height: .18rem;
-  background: white;
-}
-.explore{
-  margin: auto;
-  margin-top: 2rem;
-  padding: 1rem;
-  background: hsl(0, 0%, 14%);
-  width: max-content;
-  display: flex;
   align-items: center;
-  gap:3px;
-}
-.explore svg{
-  transition: transform ease-in-out 300ms;
-
-}
-.explore:hover svg{
-  transform: scale(1.3);
-  transform: translateX(5px);
-
-} 
-.inspiration{
-  text-align: center;
-  font-size: 0.85rem;
-  padding-top: 3rem;
-  color: hsl(0, 0%, 20%);
-}
-.inspiration span{
-  color: hsl(0, 0%, 50%);
-
 }
 
-.end {
-  /* position: absolute; */
-  bottom: 0rem;
-  left: -29rem;
-  height: 200vh;
-  width: 500vw;
+.image {
+  width: 70%;
+  height: 50%;
+  margin-left: 20%;
 }
 
-.homeText {
-  display: none
+.title {
+  font-size: 2rem;
+  margin: 2rem 0;
 }
 
-@media (min-width : 600px) {
-  .display{
-    display: block;
-  }
-  .homeSvg {
-    display: none;
-
-  }
-
-  .homeText {
-    display: block;
-  }
+.description {
+  line-height: 1;
+  margin: 2rem 0;
+  font-size: 1.2rem;
 }
 
-.invisible {
-  display: none
+.button {
+  border-radius: 4px;
+  background-color: blue;
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 20px;
+  width: 200px;
+  cursor: pointer;
+  margin-bottom: 2%;
 }
 
-.underline {
-  text-decoration: underline;
-}
-
-@media (max-width: 400px) {
-
-  .main h1 {
-    font-size: 22px;
-    display: block;
-    margin: 12px 0;
-  }
-
-  .software_font {
-    font-size: 14px;
-    color: white;
-    font-weight: bold;
-  }
-
-  .desc {
-    font-size: 12px;
+@media (max-width: 1000px) {
+  .main {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
