@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, Component } from "react";
 // import gsap from "gsap";
+import gsap from "gsap/dist/gsap";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useGlobalContext } from "../context";
@@ -12,49 +13,49 @@ const Header = () => {
   const modal = useRef();
   const router = useRouter();
   const { active, setActive } = useGlobalContext();
-  // const [tl, setTl] = useState(gsap.timeline({ paused: false }));
+  const [tl, setTl] = useState(gsap.timeline({ paused: false }));
   const { isModalOpen, setModal } = useGlobalContext();
   const ref = useRef();
 
-  // const handleModal = () => {
-  //   console.log(isModalOpen);
-  //   if (!isModalOpen) {
-  //     gsap.to(burger1.current, { rotate: "45deg", y: "15", width: "2rem" });
-  //     gsap.to(burger2.current, { rotate: "-45deg" });
-  //     gsap.to(modal.current, {
-  //       y: "105vh",
-  //       opacity: 1,
-  //       duration: 0.6,
-  //       display: "flex",
-  //     });
-  //     setModal(!isModalOpen);
-  //   }
-  //   if (isModalOpen) {
-  //     gsap.to(burger1.current, {
-  //       duration: 0,
-  //       rotate: "0",
-  //       y: "-3",
-  //       width: "3rem",
-  //     });
-  //     gsap.to(burger2.current, { rotate: "+0", duration: 0 });
-  //     gsap.to(modal.current, {
-  //       y: "-105vh",
-  //       display: "none",
-  //       opacity: 0,
-  //       duration: 0.1,
-  //     });
-  //     setModal(!isModalOpen);
-  //   }
-  // };
+  const handleModal = () => {
+    console.log(isModalOpen);
+    if (!isModalOpen) {
+      gsap.to(burger1.current, { rotate: "45deg", y: "15", width: "2rem" });
+      gsap.to(burger2.current, { rotate: "-45deg" });
+      gsap.to(modal.current, {
+        y: "105vh",
+        opacity: 1,
+        duration: 0.6,
+        display: "flex",
+      });
+      setModal(!isModalOpen);
+    }
+    if (isModalOpen) {
+      gsap.to(burger1.current, {
+        duration: 0,
+        rotate: "0",
+        y: "-3",
+        width: "3rem",
+      });
+      gsap.to(burger2.current, { rotate: "+0", duration: 0 });
+      gsap.to(modal.current, {
+        y: "-105vh",
+        display: "none",
+        opacity: 0,
+        duration: 0.1,
+      });
+      setModal(!isModalOpen);
+    }
+  };
 
-  // useEffect(() => {
-  //   tl.from(ref.current, {
-  //     x: `${Number(Math.random().toFixed()) > 0.5 ? "+" : "-"}=60`,
-  //     opacity: 0,
-  //     duration: 0.3,
-  //   });
-  //   setModal(false);
-  // }, []);
+  useEffect(() => {
+    tl.from(ref.current, {
+      x: `${Number(Math.random().toFixed()) > 0.5 ? "+" : "-"}=60`,
+      opacity: 0,
+      duration: 0.3,
+    });
+    setModal(false);
+  }, []);
 
   return (
     <header className={`${styles.header}`}>
@@ -63,9 +64,7 @@ const Header = () => {
           {data.map(({ name, link, alt }, index) => {
             return (
               <NavItem
-                handleModal={
-                  ""
-                }
+                handleModal={handleModal}
                 key={index}
                 alt={alt}
                 name={name}
@@ -75,7 +74,7 @@ const Header = () => {
             );
           })}
         </ul>
-        <div className={styles.burger} >
+        <div className={styles.burger} onClick={handleModal}>
           <div ref={burger1} className={styles.burger1}></div>
           <div ref={burger2} className={styles.burger2}></div>
         </div>

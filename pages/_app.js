@@ -4,6 +4,7 @@ import Header from "../components/header";
 
 function MyApp({ Component, pageProps }) {
   return <AppProvider>
+    <Header/>
     <Component {...pageProps} />
   </AppProvider>
 }
