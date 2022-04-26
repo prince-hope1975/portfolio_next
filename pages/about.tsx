@@ -45,7 +45,7 @@ const About = () => {
           <h2>Roots</h2>
           <p>
             I have Been Into Software Development since 2018 and have gathered
-            skills that help me create software, that solves real world problems
+            skills that help me create software, that solveenj real world problems
             and provide value
           </p>
           <h2>Tech Tools</h2>
