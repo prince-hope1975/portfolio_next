@@ -4,19 +4,13 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import gsap from "gsap";
 import Link from "next/link";
-import links from "../components/footerData";
+import links from "../data/footerData";
 import { useRouter } from "next/router";
-import { Squiggles } from "./contact";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useInView } from "react-intersection-observer";
-
-import {
-  AiOutlineArrowRight
-} from "react-icons/ai";
+import { AiOutlineArrowRight } from "react-icons/ai";
 import { useGlobalContext } from "../context";
 
 export default function Home() {
-  const router = useRouter()
+  const router = useRouter();
   const [tl, setTl] = useState(gsap.timeline({ paused: false }));
   const { theme, setTheme, setModal } = useGlobalContext();
   const ref = useRef();
@@ -91,7 +85,9 @@ export default function Home() {
       <div onClick={() => router.push("/projects")} className={styles.explore}>
         Explore <AiOutlineArrowRight />
       </div>
-      <div className={styles.inspiration}>inspired By <span>Collins Enebeli</span></div>
+      <div className={styles.inspiration}>
+        inspired By <span>Collins Enebeli</span>
+      </div>
     </div>
   );
 }

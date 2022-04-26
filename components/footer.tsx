@@ -1,12 +1,7 @@
-import {
-  AiOutlineTwitter,
-  AiFillLinkedin,
-  AiFillGithub,
-  AiFillMail,
-} from "react-icons/ai";
 import Link from "next/link";
 import styles from "../styles/Footer.module.css";
-import links from "./footerData";
+import links from "../data/footerData";
+
 const Footer = () => {
   return (
     <Blob className={`${styles.footer}`}>

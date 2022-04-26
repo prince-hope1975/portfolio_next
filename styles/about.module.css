@@ -17,9 +17,9 @@
 }
 .blob{
     height: 100%;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     background: hsl(0, 2%, 90%);
-    padding: 2rem 1.5rem 10rem 1.5rem;
+    padding: 2rem 1.5rem 1rem 1.5rem;
     margin-top: 1rem;
 }
 .blob p{
