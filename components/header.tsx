@@ -16,7 +16,8 @@ const Header = () => {
   const [tl, setTl] = useState(gsap.timeline({ paused: false }));
   const { isModalOpen, setModal } = useGlobalContext();
   const ref = useRef();
-
+  const {theme, setTheme} = useGlobalContext();
+ 
   const handleModal = () => {
     console.log(isModalOpen);
     if (!isModalOpen) {
@@ -73,6 +74,9 @@ const Header = () => {
               />
             );
           })}
+          <li onClick={()=>setTheme("purple")}>
+            Change
+          </li>
         </ul>
         <div className={styles.burger} onClick={handleModal}>
           <div ref={burger1} className={styles.burger1}></div>

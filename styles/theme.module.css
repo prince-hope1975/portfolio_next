@@ -1,0 +1,26 @@
+.default {
+    --text-clr: hsl(0, 0%, 81%);
+    --bg: rgb(21, 21, 21);
+    --text-clr: hsl(0, 0%, 81%);
+    --header-txt: monospace;
+    --border-clr: rgb(226, 116, 12);
+    min-height: 100vh;
+    color: var(--text-clr);
+    background-color: var(--bg);
+}
+
+.red {
+    --bg: red;
+}
+
+.purple {
+    --bg: purple;
+}
+
+.dark {
+    --bg: rgb(21, 21, 21);
+}
+
+.light {
+    --bg: white;
+}

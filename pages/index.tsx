@@ -7,6 +7,7 @@ import Link from "next/link";
 import links from "../data/footerData";
 import { useRouter } from "next/router";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import Meta from "../components/Meta";
 import { useGlobalContext } from "../context";
 
 export default function Home() {
@@ -26,21 +27,23 @@ export default function Home() {
 
   return (
     <div ref={ref}>
-      <Head>
+      <Meta>
         <title>Home</title>
         <meta
-          name="Home page"
+          name="Prince Charles Amachree Portfolio"
           content="Prince charles Amachree Portfoliio Homepage"
         />
+        <meta name="og:description" property="og:description" content="I am a Software Developer, skilled in building interactive fullstack applications. \n I am currently building solutions on thje Algorand blockchain" />
+
         <link rel="icon" href="/png.ico" />
-      </Head>
+      </Meta>
 
       {false && (
         <div className={`${styles.squiggle} ${styles.display}`}>
           <Image alt="squiggle" src="/Saly-30.png" width={750} height={250} />
         </div>
       )}
-      <main className={`${styles.main}`}>
+      <main className={`${styles.main} ${styles[theme]}`}>
         <Logo className={`${styles.homeLogo} `} />
 
         <div className={`${styles.text}`}>
@@ -70,7 +73,7 @@ export default function Home() {
           </div>
         )}
       </main>
-      <footer className={`${styles.footer}`}>
+      <footer className={`${styles.footer} `}>
         <div className={styles.contacts}>
           {links.map((item, index) => {
             const { Logo } = item;
