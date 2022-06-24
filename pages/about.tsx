@@ -7,6 +7,7 @@ import styles from "../styles/about.module.css";
 import { Logo } from ".";
 import { Blob } from "../components/footer";
 import { useGlobalContext } from "../context";
+import Meta from "../components/Meta";
 
 const About = () => {
   const ref = useRef();
@@ -23,14 +24,14 @@ const About = () => {
   }, []);
   return (
     <>
-      <Head>
+      <Meta>
         <title>About Me</title>
         <meta
           name="description"
           content="Prince charles Amachree Portfoliio About"
         />
         <link rel="icon" href="/png.ico" />
-      </Head>
+      </Meta>
       <div className={styles.container}>
         <main className={styles.main} ref={ref}>
           <Logo className={styles.logo} />

@@ -1,12 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import Footer from "../components/footer";
 import { Squiggles } from "./contact";
 import styles from "../styles/Project.module.css";
 import Data from "../data/ProjectsData";
 import { useGlobalContext } from "../context";
+import Meta from "../components/Meta";
 
 const Work = () => {
   const { setModal } = useGlobalContext();
@@ -18,14 +18,14 @@ const Work = () => {
 
   return (
     <>
-      <Head>
+      <Meta>
         <title>My Work</title>
         <meta
           name="description"
           content="Prince charles Amachree Portfoliio About"
         />
         <link rel="icon" href="/png.ico" />
-      </Head>
+      </Meta>
       <section className={`${styles.section}`}>
         <div className={styles.projects}>Projects</div>
         <div className={styles.cardSection}>

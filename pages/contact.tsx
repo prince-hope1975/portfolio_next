@@ -1,10 +1,10 @@
-import Head from "next/head";
 import Image from "next/image";
 import Footer from "../components/footer";
 import styles from "../styles/Contact.module.css";
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useGlobalContext } from "../context";
+import Meta from "../components/Meta";
 
 const Contact = () => {
   const {setModal} = useGlobalContext()
@@ -25,14 +25,14 @@ const Contact = () => {
      }, []);
   return (
     <div ref={ref}>
-      <Head>
+      <Meta>
         <title>Contact Me</title>
         <meta
           name="description"
           content="Prince charles Amachree Portfoliio About"
         />
         <link rel="icon" href="/png.ico" />
-      </Head>
+      </Meta>
       <main className={styles.main}>
         <form className={styles.form} onSubmit={handleSubmit}>
           <input required
