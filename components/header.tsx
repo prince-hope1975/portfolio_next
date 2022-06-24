@@ -6,6 +6,8 @@ import { useRouter } from "next/router";
 import { useGlobalContext } from "../context";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Data from "../data/themeChangeData";
+import Circle from "./circle";
 
 const Header = () => {
   const burger1 = useRef();
@@ -74,8 +76,14 @@ const Header = () => {
               />
             );
           })}
-          <li onClick={()=>setTheme("purple")}>
-            Change
+          <li className={styles.themeBalls}  >
+            {Data.map(({name, color})=>{
+             return <Circle
+                onClick={() => setTheme(name)}
+                key={name + color}
+                bg={color}
+              ></Circle>;
+            })}
           </li>
         </ul>
         <div className={styles.burger} onClick={handleModal}>

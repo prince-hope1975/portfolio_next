@@ -27,6 +27,19 @@
     gap: 2rem;
     list-style: none;
     opacity: 0;
+    transition: background 0.5s ease-in-out;
+}
+
+.themeBalls {
+    display: flex;
+    gap: .5rem;
+}
+
+.circle {
+    width: 2rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1.5px solid var(--border-clr);
 }
 
 .burger {
@@ -87,7 +100,7 @@
 }
 
 .main p {
-    font-weight: lighter;
+    font-weight: bold;
     text-align: center;
     margin: 0;
     margin-bottom: .2rem;
@@ -101,11 +114,11 @@
 }
 
 .desc {
-    color: hsl(0, 0%, 51%)
+    color: var(--alt-text-clr)
 }
 
 .span {
-    color: white
+    color: var(--text-clr)
 }
 
 .logo {
@@ -180,11 +193,12 @@
     margin: auto;
     margin-top: 2rem;
     padding: 1rem;
-    background: hsl(0, 0%, 14%);
+    background: var(--alt-bg);
     width: max-content;
     display: flex;
     align-items: center;
     gap: 3px;
+    cursor: pointer;
 }
 
 .explore svg {

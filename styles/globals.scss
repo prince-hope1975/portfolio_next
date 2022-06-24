@@ -1,11 +1,12 @@
 :root {
     --bg: rgb(21, 21, 21);
-    --bg-purple: hsl(276, 82%, 51%);
+    --alt-bg: hsl(0, 0%, 14%);
     --linear-purple: linear-gradient(hsl(276, 82%, 51%), hsl(278, 91%, 27%));
     ;
     --text-clr: hsl(0, 0%, 81%);
     --header-txt: monospace;
-    --border-clr: rgb(226, 116, 12)
+    --border-clr: rgb(226, 116, 12);
+    --alt-text-clr: hsl(0, 0%, 51%);
 }
 
 html {
@@ -23,12 +24,6 @@ body {
     min-height: 100vh;
     font-family: Air-light, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
-
-/* *{
-  padding: 0;
-  margin: 0;
-} */
 
 a {
     color: inherit;
