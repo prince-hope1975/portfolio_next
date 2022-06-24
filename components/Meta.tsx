@@ -14,11 +14,9 @@ const Meta = (props) => (
     <meta name="twitter:creator" content="" />
     <link rel="icon" type="image/png" href="/static/images/favicon.ico" />
     <link rel="apple-touch-icon" href="/static/images/favicon.ico" />
-    <link rel="stylesheet" href="" />
     <meta property="og:image" content="" />
     <meta name="twitter:image" content="" />
     <link rel="canonical" href="" />
-    <script type="text/javascript" src=""></script>
   </Head>
 );
 export default Meta;
