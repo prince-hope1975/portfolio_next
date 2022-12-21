@@ -11,10 +11,10 @@ const data = [
     name: "purple",
     color: "purple",
   },
-  {
-    name: "red",
-    color: "red",
-  },
+  // {
+  //   name: "red",
+  //   color: "red",
+  // },
 ];
 
 export default data;

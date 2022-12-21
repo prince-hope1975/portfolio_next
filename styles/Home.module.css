@@ -54,7 +54,7 @@
 
 .burger1,
 .burger2 {
-    background: white;
+    background: var(--text-clr);
     height: .08rem;
 }
 
@@ -194,6 +194,7 @@
     margin-top: 2rem;
     padding: 1rem;
     background: var(--alt-bg);
+    color: var(--text-clr);
     width: max-content;
     display: flex;
     align-items: center;
@@ -214,11 +215,11 @@
     text-align: center;
     font-size: 0.85rem;
     padding-top: 3rem;
-    color: hsl(0, 0%, 20%);
+    color: var(--text-clr);
 }
 
 .inspiration span {
-    color: hsl(0, 0%, 50%);
+    color: var(--alt-text-clr);
 }
 
 .end {

@@ -10,7 +10,6 @@ import Meta from "../components/Meta";
 
 const Work = () => {
   const { setModal } = useGlobalContext();
-  const [tl, setTl] = useState(gsap.timeline({ paused: false }));
 
   useEffect(() => {
     setModal(false);

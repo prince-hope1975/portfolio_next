@@ -32,7 +32,11 @@ export default function Home() {
           name="Prince Charles Amachree Portfolio"
           content="Prince charles Amachree Portfoliio Homepage"
         />
-        <meta name="og:description" property="og:description" content="I am a Software Developer, skilled in building interactive fullstack applications. \n I am currently building solutions on thje Algorand blockchain" />
+        <meta
+          name="og:description"
+          property="og:description"
+          content="I am a Software Developer, skilled in building interactive fullstack applications. \n I am currently building solutions on thje Algorand blockchain"
+        />
 
         <link rel="icon" href="/png.ico" />
       </Meta>
