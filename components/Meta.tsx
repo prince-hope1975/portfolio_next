@@ -12,8 +12,8 @@ const Meta = (props) => (
     <meta name="twitter:description" content={props.desc} />
     <meta name="twitter:site" content="" />
     <meta name="twitter:creator" content="" />
-    <link rel="icon" type="image/png" href="/static/images/favicon.ico" />
-    <link rel="apple-touch-icon" href="/static/images/favicon.ico" />
+    <link rel="icon" href="/me.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/me.png" />
     <meta property="og:image" content="" />
     <meta name="twitter:image" content="" />
     <link rel="canonical" href="" />
