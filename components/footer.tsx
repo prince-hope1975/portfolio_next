@@ -11,7 +11,7 @@ const Footer = () => {
         {links.map((item,index)=>{
           const {Logo} = item
           return (
-            <Link key={index} href={`${item.Link}`} legacyBehavior>
+            <Link key={index} href={`${item.Link}`} passHref legacyBehavior>
               <Logo />
             </Link>
           );

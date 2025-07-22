@@ -8,25 +8,31 @@ const Cursor = () => {
   const [mouseY, setMouseY] = useState(0);
 
   useEffect(() => {
-    window.document.addEventListener("mousemove", (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setMouseX(e.clientX);
       setMouseY(e.clientY);
-    });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
-  useEffect(() => {
-    setPosX(posX + (mouseX - posX) / 9);
-    setPosY(posY + (mouseY - posY) / 9);
-    gsap.set(cursor_follower.current, {
-      css: {
-        left: posX - 12,
-        top: posY - 12,
-      },
+
+  useLayoutEffect(() => {
+    gsap.to(cursor.current, {
+      duration: 0.1,
+      x: mouseX,
+      y: mouseY,
+      ease: "power2.out",
     });
-    gsap.set(cursor.current, {
-      css: {
-        left: mouseX,
-        top: mouseY,
-      },
+
+    gsap.to(cursor_follower.current, {
+      duration: 0.6,
+      x: mouseX,
+      y: mouseY,
+      ease: "power2.out",
     });
   }, [mouseX, mouseY]);
 
@@ -43,8 +49,8 @@ const Cursor = () => {
     
   //   })
   // },[])
-  const cursor = useRef();
-  const cursor_follower = useRef();
+  const cursor = useRef<HTMLDivElement>(null);
+  const cursor_follower = useRef<HTMLDivElement>(null);
 
   return (
     <>

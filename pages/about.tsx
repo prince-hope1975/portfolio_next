@@ -52,7 +52,7 @@ const AboutPage: NextPage = () => {
                   I am a passionate and results-driven engineer with a strong background in building intelligent, decentralized applications and modern web experiences. My journey in technology has been fueled by a desire to solve complex problems and create impactful solutions.
                 </p>
                 <p>
-                  I thrive in dynamic environments where I can continuously learn and adapt to new challenges. Whether it's developing a sophisticated AI model, architecting a secure blockchain application, or crafting a seamless user interface, I am committed to delivering high-quality work.
+                  I thrive in dynamic environments where I can continuously learn and adapt to new challenges. Whether it{"'"}s developing a sophisticated AI model, architecting a secure blockchain application, or crafting a seamless user interface, I am committed to delivering high-quality work.
                 </p>
                 <p>
                   Beyond coding, I am an advocate for open-source and enjoy contributing to projects that empower the developer community. I believe in the power of collaboration and am always open to connecting with like-minded individuals.

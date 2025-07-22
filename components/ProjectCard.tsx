@@ -31,7 +31,7 @@ export function ProjectCard({ title, description, tags, link }: ProjectCardProps
             <CardDescription>{description}</CardDescription>
           </div>
           {link && (
-            <Link href={link} target="_blank" rel="noopener noreferrer">
+            <Link href={link} target="_blank" rel="noopener noreferrer" passHref>
               <Button variant="outline" size="sm">View</Button>
             </Link>
           )}
