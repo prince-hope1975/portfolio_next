@@ -19,10 +19,23 @@ interface ProjectCardProps {
 
 export function ProjectCard({ title, description, tags, link }: ProjectCardProps) {
   return (
-    <Card className="flex flex-col h-full">
+    <Card className="flex flex-col h-full border rounded-lg">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+        <div className="flex justify-between items-start">
+          <div>
+            <CardTitle className="text-xl">
+              <Link href={link || '#'} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                {title}
+              </Link>
+            </CardTitle>
+            <CardDescription>{description}</CardDescription>
+          </div>
+          {link && (
+            <Link href={link} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="sm">View</Button>
+            </Link>
+          )}
+        </div>
       </CardHeader>
       <CardContent className="flex-grow">
         {/* You can add more content here, like an image */}
@@ -32,13 +45,6 @@ export function ProjectCard({ title, description, tags, link }: ProjectCardProps
           <Badge key={tag} variant="secondary">{tag}</Badge>
         ))}
       </CardFooter>
-      {link && (
-        <div className="p-6 pt-0">
-          <Link href={link} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="w-full">View Project</Button>
-          </Link>
-        </div>
-      )}
     </Card>
   )
 } 

@@ -6,7 +6,6 @@ import { featuredProjects } from '@/data/projects'
 import { Header } from '@/components/header'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
-import { ScrollAnimation } from '@/components/ScrollAnimation'
 
 const Home: NextPage = () => {
   return (
@@ -19,59 +18,50 @@ const Home: NextPage = () => {
       <Header />
 
       <main className="flex-grow container mx-auto p-4 md:p-8">
-        <ScrollAnimation>
-          <section id="hero" className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-12 md:py-20">
-            <div className="md:col-span-2 order-2 md:order-1">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">AI, Blockchain & Fullstack Engineer</h1>
-              <p className="text-lg text-muted-foreground mb-8">
-                Building intelligent, decentralized solutions and modern web experiences.
-              </p>
-              <div className="flex gap-4">
-                <Link href="/projects" passHref legacyBehavior><Button size="lg">View Projects</Button></Link>
-                <Link href="/contact" passHref legacyBehavior><Button size="lg" variant="outline">Contact Me</Button></Link>
-              </div>
-            </div>
-            <div className="order-1 md:order-2 flex justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Left Sidebar */}
+          <div className="md:col-span-1">
+            <div className="flex flex-col items-center md:items-start">
               <Image
                 src="/me.png"
                 alt="Prince Charles"
                 width={250}
                 height={250}
-                className="rounded-full border-4 border-primary"
+                className="rounded-full border-4 border-primary mb-4"
               />
-            </div>
-          </section>
-        </ScrollAnimation>
-
-        <ScrollAnimation>
-          <section id="introduction" className="py-20">
-            <h2 className="text-3xl font-bold text-center mb-12">About Me</h2>
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="text-lg text-muted-foreground mb-8">
-                I am a Senior AI, Blockchain and Fullstack Engineer with a passion for building intelligent, decentralized applications and modern web experiences. I have experience with a wide range of technologies, including Python, TensorFlow, Algorand, Reach-lang, Next.js, and more.
-              </p>
-              <div className="flex justify-center gap-4">
-                <a href="https://github.com/prince-hope1975" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline">GitHub</Button>
-                </a>
-                <a href="https://www.linkedin.com/in/princeam/" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline">LinkedIn</Button>
-                </a>
+              <h1 className="text-2xl font-bold">Prince Charles</h1>
+              <p className="text-muted-foreground mb-4">@prince-hope1975</p>
+              <div className="flex flex-col gap-2 w-full">
+                  <a href="https://github.com/prince-hope1975" target="_blank" rel="noopener noreferrer" className="w-full">
+                    <Button variant="outline" className="w-full">GitHub</Button>
+                  </a>
+                  <a href="https://www.linkedin.com/in/princeam/" target="_blank" rel="noopener noreferrer" className="w-full">
+                    <Button variant="outline" className="w-full">LinkedIn</Button>
+                  </a>
+                  <Link href="/contact" passHref legacyBehavior><Button variant="outline" className="w-full">Contact Me</Button></Link>
               </div>
             </div>
-          </section>
-        </ScrollAnimation>
+          </div>
 
-        <ScrollAnimation>
-          <section id="featured-projects" className="py-20 bg-card rounded-lg border">
-            <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8">
-              {featuredProjects.map((project) => (
-                <ProjectCard key={project.title} {...project} />
-              ))}
-            </div>
-          </section>
-        </ScrollAnimation>
+          {/* Right Content */}
+          <div className="md:col-span-3">
+            <section id="about-me" className="mb-12 p-4 border rounded-lg bg-card">
+              <h2 className="text-2xl font-bold border-b pb-2 mb-4">About Me</h2>
+              <p className="text-lg text-muted-foreground">
+                I am a Senior Blockchain and AI/Fullstack Engineer with a passion for building intelligent, decentralized applications and modern web experiences. I have experience with a wide range of technologies, including Python, TensorFlow, Algorand, Reach-lang, Next.js, and more.
+              </p>
+            </section>
+
+            <section id="featured-projects">
+              <h2 className="text-2xl font-bold border-b pb-2 mb-4">Featured Projects</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {featuredProjects.map((project) => (
+                  <ProjectCard key={project.title} {...project} />
+                ))}
+              </div>
+            </section>
+          </div>
+        </div>
       </main>
 
       <footer className="py-4 px-8 border-t text-center text-muted-foreground">
