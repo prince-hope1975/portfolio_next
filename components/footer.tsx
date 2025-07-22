@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "../styles/Footer.module.css";
 import links from "../data/footerData";
+import { Blob } from "./Blob";
 
 const Footer = () => {
   return (
@@ -22,9 +23,5 @@ const Footer = () => {
     </Blob>
   );
 };
-export const Blob =({className, children})=>{
-return <div className={`${styles.blob} ${className}`}>
-{children}
-</div>
-}
+
 export default Footer;

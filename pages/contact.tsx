@@ -1,75 +1,36 @@
-import Image from "next/image";
-import Footer from "../components/footer";
-import styles from "../styles/Contact.module.css";
-import { useState, useRef, useEffect } from "react";
-import gsap from "gsap";
-import { useGlobalContext } from "../context";
-import Meta from "../components/Meta";
+import type { NextPage } from 'next'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Header } from '@/components/header'
+import { NextSeo } from 'next-seo'
 
-const Contact = () => {
-  const {setModal} = useGlobalContext()
-  const [input, setInput] = useState({})
-  const handleSubmit = () => {
-    return;
-  };
-     const ref = useRef();
-     const [tl, setTl] = useState(gsap.timeline({ paused: false }));
-
-     useEffect(() => {
-       tl.from(ref.current, {
-         x: `${Number(Math.random().toFixed()) > 0.5 ? "+" : "-"}=60`,
-         opacity: 0,
-         duration: 0.3,
-       });
-       setModal(false)
-     }, []);
+const ContactPage: NextPage = () => {
   return (
-    <div ref={ref}>
-      <Meta>
-        <title>Contact Me</title>
-        <meta
-          name="description"
-          content="Prince charles Amachree Portfoliio About"
-        />
-        <link rel="icon" href="/png.ico" />
-      </Meta>
-      <main className={styles.main}>
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <input required
-            type="text"
-            onChange={(e) => {
-              setInput({ ...input, name: e.target.value });
-            }}
-            placeholder="Your Name"
-          />
-          <input required
-            type="email"
-            onChange={(e) => {
-              setInput({ ...input, mail: e.target.value });
-            }}
-            placeholder="Your Email"
-          />
-          <textarea placeholder="Job Details" required/>
+    <div className="flex flex-col min-h-screen">
+      <NextSeo
+        title="Contact - Prince Charles"
+        description="Get in touch with Prince Charles, a Senior Blockchain and Fullstack Engineer."
+      />
 
-          <input type="submit" value="SUBMIT" />
-        </form>
+      <Header />
+
+      <main className="flex-grow container mx-auto p-8">
+        <div className="max-w-2xl mx-auto">
+          <h1 className="text-4xl font-bold text-center mb-8">Contact Me</h1>
+          <p className="text-center text-lg text-muted-foreground mb-12">
+            Have a question or want to work together? Feel free to reach out.
+          </p>
+          <form className="space-y-6">
+            <Input type="text" placeholder="Name" />
+            <Input type="email" placeholder="Email" />
+            <Textarea placeholder="Your message" />
+            <Button type="submit" className="w-full">Send Message</Button>
+          </form>
+        </div>
       </main>
-      <Squiggles />
-
-      <Footer />
     </div>
-  );
-};
-export const Squiggles = () => {
-  return (
-    <>
-      <div className={`${styles.squiggle1}`}>
-        <Image alt="squiggles"src="/Saly-33.png" width={900} height={400} />
-      </div>
-      <div className={`${styles.squiggle2}`}>
-        <Image alt="squiggles" src="/Saly-33.png" width={700} height={300} />
-      </div>
-    </>
-  );
-};
-export default Contact;
+  )
+}
+
+export default ContactPage

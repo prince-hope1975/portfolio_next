@@ -1,13 +1,8 @@
-import React from 'react'
-import { useGlobalContext } from '../context'
-import styles from "../styles/theme.module.css"
+"use client"
 
-const ThemeProvider = (props) => {
-    const { theme, setTheme } = useGlobalContext()
-    const {className} =  props
-  return (
-    <div className={`${className} ${styles.default} ${styles[theme]}`} {...props}>{props.children}</div>
-  )
+import * as React from "react"
+import { ThemeProvider as NextThemesProvider } from "next-themes"
+
+export function ThemeProvider({ children, ...props }: any) {
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
 }
-
-export default ThemeProvider // eslint-disable-line

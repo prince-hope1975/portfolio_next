@@ -1,171 +1,42 @@
-import { useState, useRef, useEffect, Component } from "react";
-// import gsap from "gsap";
-import gsap from "gsap/dist/gsap";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useGlobalContext } from "../context";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import Data from "../data/themeChangeData";
-import Circle from "./circle";
+"use client"
 
-const Header = () => {
-  const burger1 = useRef();
-  const burger2 = useRef();
-  const modal = useRef();
-  const router = useRouter();
-  const { active, setActive } = useGlobalContext();
-  const [tl, setTl] = useState(gsap.timeline({ paused: false }));
-  const { isModalOpen, setModal } = useGlobalContext();
-  const ref = useRef();
-  const {theme, setTheme} = useGlobalContext();
- 
-  const handleModal = () => {
-    console.log(isModalOpen);
-    if (!isModalOpen) {
-      gsap.to(burger1.current, { rotate: "45deg", y: "15", width: "2rem" });
-      gsap.to(burger2.current, { rotate: "-45deg" });
-      gsap.to(modal.current, {
-        y: "105vh",
-        opacity: 1,
-        duration: 0.6,
-        display: "flex",
-      });
-      setModal(!isModalOpen);
-    }
-    if (isModalOpen) {
-      gsap.to(burger1.current, {
-        duration: 0,
-        rotate: "0",
-        y: "-3",
-        width: "3rem",
-      });
-      gsap.to(burger2.current, { rotate: "+0", duration: 0 });
-      gsap.to(modal.current, {
-        y: "-105vh",
-        display: "none",
-        opacity: 0,
-        duration: 0.1,
-      });
-      setModal(!isModalOpen);
-    }
-  };
+import Link from "next/link"
+import { useState } from "react"
+import { Menu, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "@/components/ThemeToggle"
 
-  useEffect(() => {
-    tl.from(ref.current, {
-      x: `${Number(Math.random().toFixed()) > 0.5 ? "+" : "-"}=60`,
-      opacity: 0,
-      duration: 0.3,
-    });
-    setModal(false);
-  }, []);
+export function Header() {
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className={`${styles.header}`}>
-      <nav className={`${styles.nav}`}>
-        <ul ref={modal} className={`${styles["nav-menu"]} `}>
-          {data.map(({ name, link, alt }, index) => {
-            return (
-              <NavItem
-                handleModal={handleModal}
-                key={index}
-                alt={alt}
-                name={name}
-                link={link}
-                index={index}
-              />
-            );
-          })}
-          <li className={styles.themeBalls}  >
-            {Data.map(({name, color})=>{
-             return <Circle
-                onClick={() => setTheme(name)}
-                key={name + color}
-                bg={color}
-              ></Circle>;
-            })}
-          </li>
-        </ul>
-        <div className={styles.burger} onClick={handleModal}>
-          <div ref={burger1} className={styles.burger1}></div>
-          <div ref={burger2} className={styles.burger2}></div>
+    <header className="py-4 px-8 border-b">
+      <nav className="flex justify-between items-center">
+        <Link href="/" legacyBehavior passHref>
+          <a className="font-bold text-lg">Prince Charles</a>
+        </Link>
+        <div className="hidden md:flex gap-4 items-center">
+          <Link href="/about" passHref><Button variant="ghost">About</Button></Link>
+          <Link href="/projects" passHref><Button variant="ghost">Projects</Button></Link>
+          <Link href="/contact" passHref><Button variant="ghost">Contact</Button></Link>
+          <ThemeToggle />
+        </div>
+        <div className="md:hidden">
+          <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X /> : <Menu />}
+          </Button>
         </div>
       </nav>
-      <div
-        className={styles.img}
-        onClick={() => {
-          setActive(0);
-          router.push("/");
-        }}
-      >
-        <Image
-          alt="Header icon"
-          className={`${styles.image}`}
-          src="/png2.png"
-          width={90}
-          height={100}
-        />
-      </div>
+      {isOpen && (
+        <div className="md:hidden mt-4">
+          <div className="flex flex-col gap-4">
+            <Link href="/about" passHref><Button variant="ghost" className="w-full">About</Button></Link>
+            <Link href="/projects" passHref><Button variant="ghost" className="w-full">Projects</Button></Link>
+            <Link href="/contact" passHref><Button variant="ghost" className="w-full">Contact</Button></Link>
+            <ThemeToggle />
+          </div>
+        </div>
+      )}
     </header>
-  );
-};
-
-const NavItem = ({ name, link, index, alt, handleModal }) => {
-  const { active, setActive, setModal } = useGlobalContext();
-  return (
-    <li
-      key={index}
-      className={`${styles["nav-item"]}    ${
-        active === index ? "current" : ""
-      }`}
-      onClick={() => {
-        setActive(index);
-      }}
-    >
-      <Link href={`/${link}`}>
-        {!alt ? (
-          <a
-            onClick={handleModal}
-            className={`${styles["home-link"]} ${
-              active === index && styles.underline
-            }`}
-          >
-            {name || "Home"}
-          </a>
-        ) : (
-          <a className={`${styles["home-link"]}`}>
-            <span className={styles.homeText}>Home</span>
-            <span
-              className={`${styles.homeSvg} ${
-                active === 0 && styles.invisible
-              }`}
-            >
-              {alt}
-            </span>
-          </a>
-        )}
-      </Link>
-    </li>
-  );
-};
-
-const data = [
-  {
-    name: "Home",
-    link: "",
-    alt: null,
-  },
-  {
-    name: "About",
-    link: "about",
-  },
-  {
-    name: "Portfolio",
-    link: "projects",
-  },
-  {
-    name: "Contact",
-    link: "contact",
-  },
-];
-export default Header;
+  )
+}

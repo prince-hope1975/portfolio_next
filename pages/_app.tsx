@@ -1,34 +1,21 @@
-import "../styles/globals.scss";
-import { AppProvider } from "../context";
-import Header from "../components/header";
-import ThemeProvider from "../components/ThemeProvider";
-import Head from "next/head";
-import {DefaultSeo} from "next-seo"
+import '../styles/globals.scss'
+import type { AppProps } from 'next/app'
+import { ThemeProvider } from "@/components/ThemeProvider"
+import { DefaultSeo } from 'next-seo'
+import SEO from '../next-seo.config'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <AppProvider>
-      <ThemeProvider>
-        <Head>
-
-        </Head>
-        <DefaultSeo
-          titleTemplate="%s - Prince Charles"
-          openGraph={{
-            type: "website",
-            locale: "en_IE",
-            url:"https://amachree.dev",
-            description: "The personal website for Prince Charles, developer.",
-            site_name: "James Wallis | wallis.dev",
-            images: [],
-          }}
-          canonical={"https://amachree.dev"}
-        />
-        <Header />
-        <Component {...pageProps} />{" "}
-      </ThemeProvider>{" "}
-    </AppProvider>
-  );
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <DefaultSeo {...SEO} />
+      <Component {...pageProps} />
+    </ThemeProvider>
+  )
 }
 
-export default MyApp;
+export default MyApp

@@ -1,64 +1,44 @@
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import Head from "next/head";
-import Footer from "../components/footer";
-import { Squiggles } from "./contact";
-import styles from "../styles/about.module.css";
-import { Logo } from ".";
-import { Blob } from "../components/footer";
-import { useGlobalContext } from "../context";
-import Meta from "../components/Meta";
+import type { NextPage } from 'next'
+import { Button } from '@/components/ui/button'
+import { Header } from '@/components/header'
+import { NextSeo } from 'next-seo'
 
-const About = () => {
-  const ref = useRef();
-  const [tl, setTl] = useState(gsap.timeline({ paused: false }));
-  const { active, setModal } = useGlobalContext();
-
-  useEffect(() => {
-    tl.from(ref.current, {
-      x: `${Number(Math.random().toFixed()) > 0.5 ? "+" : "-"}=60`,
-      opacity: 0,
-      duration: 0.3,
-    });
-    setModal(false);
-  }, []);
+const AboutPage: NextPage = () => {
   return (
-    <>
-      <Meta>
-        <title>About Me</title>
-        <meta
-          name="description"
-          content="Prince charles Amachree Portfoliio About"
-        />
-        <link rel="icon" href="/png.ico" />
-      </Meta>
-      <div className={styles.container}>
-        <main className={styles.main} ref={ref}>
-          <Logo className={styles.logo} />
-          {"I'm Prince Charles"}
-        </main>
-        <Blob className={styles.blob}>
-          <h2>BackGround</h2>
-          <p>
-            I an Engineer, with a Background in Software and Electrical
-            Engineering
-          </p>
-          <h2>Roots</h2>
-          <p>
-            I have Been Into Software Development since 2018 and have gathered
-            skills that help me create software, that solveenj real world problems
-            and provide value
-          </p>
-          <h2>Tech Tools</h2>
-          <p>
-            Javascript, React, Next.js, TypeScript, HTML, Vite, Webpack,Node,
-            Solidity, Reach, Pyteal,
-          </p>
-        </Blob>
-        <Squiggles />
-        {/* <Footer /> */}
-      </div>
-    </>
-  );
-};
-export default About;
+    <div className="flex flex-col min-h-screen">
+      <NextSeo
+        title="About Me - Prince Charles"
+        description="Learn more about Prince Charles, a Senior Blockchain and Fullstack Engineer."
+      />
+
+      <Header />
+
+      <main className="flex-grow container mx-auto p-8">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl font-bold mb-8">About Me</h1>
+          <div className="space-y-6 text-lg text-muted-foreground">
+            <p>
+              I am a Senior Blockchain and Fullstack Engineer with a passion for building decentralized applications and modern web experiences. I have experience with a wide range of technologies, including Algorand, Reach-lang, Next.js, and more.
+            </p>
+            <p>
+              My goal is to leverage my skills to build innovative solutions that solve real-world problems. I am always eager to learn new things and take on new challenges.
+            </p>
+            <p>
+              When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and sharing my knowledge with the community.
+            </p>
+          </div>
+          <div className="mt-12 flex justify-start gap-4">
+            <a href="https://github.com/prince-hope1975" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline">GitHub</Button>
+            </a>
+            <a href="https://www.linkedin.com/in/princeam/" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline">LinkedIn</Button>
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+  )
+}
+
+export default AboutPage
