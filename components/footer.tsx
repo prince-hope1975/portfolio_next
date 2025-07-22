@@ -11,14 +11,13 @@ const Footer = () => {
         {links.map((item,index)=>{
           const {Logo} = item
           return (
-            <Link key={index} href={`${item.Link}`}>
+            <Link key={index} href={`${item.Link}`} legacyBehavior>
               <Logo />
             </Link>
           );
         })}
         
       </div>
-
       <div className={styles.copy}>&copy; 2022 Prince Charles </div>
     </Blob>
   );

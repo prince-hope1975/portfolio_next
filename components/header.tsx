@@ -16,9 +16,9 @@ export function Header() {
           <a className="font-bold text-lg">Prince Charles</a>
         </Link>
         <div className="hidden md:flex gap-4 items-center">
-          <Link href="/about" passHref><Button variant="ghost">About</Button></Link>
-          <Link href="/projects" passHref><Button variant="ghost">Projects</Button></Link>
-          <Link href="/contact" passHref><Button variant="ghost">Contact</Button></Link>
+          <Link href="/about" passHref legacyBehavior><Button variant="ghost">About</Button></Link>
+          <Link href="/projects" passHref legacyBehavior><Button variant="ghost">Projects</Button></Link>
+          <Link href="/contact" passHref legacyBehavior><Button variant="ghost">Contact</Button></Link>
           <ThemeToggle />
         </div>
         <div className="md:hidden">
@@ -30,13 +30,13 @@ export function Header() {
       {isOpen && (
         <div className="md:hidden mt-4">
           <div className="flex flex-col gap-4">
-            <Link href="/about" passHref><Button variant="ghost" className="w-full">About</Button></Link>
-            <Link href="/projects" passHref><Button variant="ghost" className="w-full">Projects</Button></Link>
-            <Link href="/contact" passHref><Button variant="ghost" className="w-full">Contact</Button></Link>
+            <Link href="/about" passHref legacyBehavior><Button variant="ghost" className="w-full">About</Button></Link>
+            <Link href="/projects" passHref legacyBehavior><Button variant="ghost" className="w-full">Projects</Button></Link>
+            <Link href="/contact" passHref legacyBehavior><Button variant="ghost" className="w-full">Contact</Button></Link>
             <ThemeToggle />
           </div>
         </div>
       )}
     </header>
-  )
+  );
 }
