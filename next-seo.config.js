@@ -1,30 +1,38 @@
-const title = "Prince Charles - Senior Blockchain & Fullstack Engineer"
-const description = "The personal portfolio for Prince Charles, a Senior Blockchain and Fullstack Engineer specializing in decentralized applications and modern web experiences."
-
+const configuredOrigin =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "");
+let origin;
+try {
+  const url = new URL(configuredOrigin);
+  if (/^https?:$/.test(url.protocol)) origin = url.origin;
+} catch {}
+const title = "Prince Charles — Thoughtful interfaces. Serious systems.";
+const description =
+  "Senior full-stack engineer and technical lead building expressive interfaces, backend services, and AI workflows.";
 const SEO = {
   title,
   description,
-  canonical: "https://your-domain.com", // Replace with your actual domain
   openGraph: {
-    type: 'website',
-    locale: 'en_IE',
-    url: 'https://your-domain.com', // Replace with your actual domain
+    type: "website",
+    locale: "en_NG",
     title,
     description,
-    images: [
-      {
-        url: 'https://your-domain.com/og-image.png', // Replace with your actual domain and image path
-        width: 1200,
-        height: 630,
-        alt: 'Prince Charles Portfolio',
-      },
-    ],
+    ...(origin
+      ? {
+          url: origin,
+          images: [
+            {
+              url: `${origin}/og-image.png`,
+              width: 1200,
+              height: 630,
+              alt: "Prince Charles — Thoughtful interfaces. Serious systems.",
+            },
+          ],
+        }
+      : {}),
   },
-  twitter: {
-    handle: '@prince_redeyes',
-    site: '@prince_redeyes',
-    cardType: 'summary_large_image',
-  },
+  twitter: { cardType: "summary_large_image" },
 };
-
-export default SEO; 
+export default SEO;

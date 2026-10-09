@@ -1,50 +1,54 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  tags: string[];
-  link?: string;
-}
-
-export function ProjectCard({ title, description, tags, link }: ProjectCardProps) {
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import type { Project } from "@/data/projects";
+import { ProjectVisual } from "./ProjectVisual";
+export function ProjectCard({
+  project,
+  index,
+}: {
+  project: Project;
+  index: number;
+}) {
   return (
-    <Card className="flex flex-col h-full border rounded-lg">
-      <CardHeader>
-        <div className="flex justify-between items-start">
-          <div>
-            <CardTitle className="text-xl">
-              <Link href={link || '#'} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                {title}
-              </Link>
-            </CardTitle>
-            <CardDescription>{description}</CardDescription>
-          </div>
-          {link && (
-            <Link href={link} target="_blank" rel="noopener noreferrer" passHref>
-              <Button variant="outline" size="sm">View</Button>
-            </Link>
-          )}
+    <article className={`project-card project-${project.slug}`}>
+      <Link
+        passHref
+        href={`/projects/${project.slug}`}
+        className="project-image-link"
+        aria-label={`Read ${project.title} case study`}
+      >
+        <ProjectVisual project={project} />
+        <span className="project-hover-arrow">
+          <ArrowUpRight />
+        </span>
+      </Link>
+      <div className="project-copy">
+        <div className="project-meta">
+          <span className="eyebrow">
+            0{index + 1} / {project.category}
+          </span>
+          <span className="project-year">{project.year}</span>
         </div>
-      </CardHeader>
-      <CardContent className="flex-grow">
-        {/* You can add more content here, like an image */}
-      </CardContent>
-      <CardFooter className="flex flex-wrap gap-2">
-        {tags.map((tag) => (
-          <Badge key={tag} variant="secondary">{tag}</Badge>
-        ))}
-      </CardFooter>
-    </Card>
-  )
-} 
+        <Link
+          passHref
+          href={`/projects/${project.slug}`}
+          className="project-title"
+        >
+          <h3>{project.title}</h3>
+          <ArrowUpRight />
+        </Link>
+        <p>{project.description}</p>
+        <div className="project-skills">
+          {project.tags.slice(0, 3).join(" / ")}
+        </div>
+        <Link
+          passHref
+          href={`/projects/${project.slug}`}
+          className="text-link project-read"
+        >
+          Explore project <ArrowUpRight size={16} />
+        </Link>
+      </div>
+    </article>
+  );
+}

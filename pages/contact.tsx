@@ -1,52 +1,81 @@
-import type { NextPage } from 'next'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
-import { Header } from '@/components/header'
-import { NextSeo } from 'next-seo'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-
-const ContactPage: NextPage = () => {
+import { useState } from "react";
+import { ArrowUpRight, Check, Copy } from "lucide-react";
+import { SiteLayout } from "@/components/SiteLayout";
+export default function Contact() {
+  const [copyState, setCopyState] = useState("");
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText("amachreeprince7@gmail.com");
+      setCopyState("Email copied");
+    } catch {
+      setCopyState("Copy unavailable. Use the email link to get in touch.");
+    }
+  }
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
-      <NextSeo
-        title="Contact - Prince Charles"
-        description="Get in touch with Prince Charles, a Senior Blockchain and Fullstack Engineer."
-      />
-
-      <Header />
-
-      <main className="flex-grow container mx-auto p-8">
-        <div className="max-w-2xl mx-auto">
-          <Card>
-            <CardHeader>
-              <CardTitle>Contact Me</CardTitle>
-              <CardDescription>
-                Have a question or want to work together? Feel free to reach out.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form className="space-y-6">
-                <div className="space-y-2">
-                  <label htmlFor="name">Name</label>
-                  <Input id="name" type="text" placeholder="Your Name" />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="email">Email</label>
-                  <Input id="email" type="email" placeholder="Your Email" />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="message">Message</label>
-                  <Textarea id="message" placeholder="Your message" />
-                </div>
-                <Button type="submit" className="w-full">Send Message</Button>
-              </form>
-            </CardContent>
-          </Card>
+    <SiteLayout
+      title="Let’s connect"
+      description="Contact Prince Charles for senior engineering opportunities and thoughtful product conversations."
+      path="/contact"
+    >
+      <section className="page-shell contact-page">
+        <p className="eyebrow">GOOD THINGS START WITH A CONVERSATION</p>
+        <h1 className="contact-title">
+          A big idea?
+          <br />A tough problem?
+          <br />
+          <span className="orange-text">Let’s talk.</span>
+        </h1>
+        <div className="contact-bottom">
+          <div>
+            <p>
+              I’m interested in teams building useful products
+              <br className="desktop-break" /> and making room for thoughtful
+              engineering.
+            </p>
+            <div className="contact-email-row">
+              <a
+                className="contact-email"
+                href="mailto:amachreeprince7@gmail.com"
+              >
+                amachreeprince7@gmail.com <ArrowUpRight />
+              </a>
+              <button
+                className="copy-email"
+                onClick={copyEmail}
+                aria-label="Copy email address"
+              >
+                {copyState === "Email copied" ? (
+                  <Check size={18} />
+                ) : (
+                  <Copy size={18} />
+                )}
+              </button>
+            </div>
+            <p className="copy-status" role="status">
+              {copyState}
+            </p>
+          </div>
+          <div className="contact-details">
+            <span className="eyebrow">BASED IN</span>
+            <p>Nigeria · UTC+1</p>
+            <span className="eyebrow">FIND ME ELSEWHERE</span>
+            <a
+              href="https://github.com/prince-hope1975"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub <ArrowUpRight size={17} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/princeam/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn <ArrowUpRight size={17} />
+            </a>
+          </div>
         </div>
-      </main>
-    </div>
-  )
+      </section>
+    </SiteLayout>
+  );
 }
-
-export default ContactPage

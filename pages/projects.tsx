@@ -1,41 +1,65 @@
-import type { NextPage } from 'next'
-import { ProjectCard } from '@/components/ProjectCard'
-import { featuredProjects } from '@/data/projects'
-import { Header } from '@/components/header'
-import { NextSeo } from 'next-seo'
-import { Input } from "@/components/ui/input"
-
-const ProjectsPage: NextPage = () => {
+import { useState } from "react";
+import { SiteLayout } from "@/components/SiteLayout";
+import { ProjectCard } from "@/components/ProjectCard";
+import { Reveal } from "@/components/Reveal";
+import { featuredProjects } from "@/data/projects";
+const filters = ["All work", "AI & workflows", "Commerce", "Web3"];
+export default function Projects() {
+  const [filter, setFilter] = useState(0);
+  const projects = featuredProjects.filter(
+    (project) =>
+      filter === 0 ||
+      (filter === 1 && ["simplecx", "drapon"].includes(project.slug)) ||
+      (filter === 2 && project.slug === "alswap") ||
+      (filter === 3 && project.slug === "atlas-dao"),
+  );
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
-      <NextSeo
-        title="Projects - Prince Charles"
-        description="A showcase of projects by Prince Charles, a Senior Blockchain and Fullstack Engineer."
-      />
-      <Header />
-      <main className="flex-grow container mx-auto p-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Left Sidebar for Filters */}
-          <div className="md:col-span-1">
-            <div className="p-4 border rounded-lg bg-card">
-              <h2 className="text-lg font-bold mb-4">Filters</h2>
-              <Input placeholder="Find a project..." className="mb-4" />
-              {/* Add more filters here, e.g., by language or tag */}
-            </div>
-          </div>
-
-          {/* Right Content for Projects */}
-          <div className="md:col-span-3">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {featuredProjects.map((project) => (
-                <ProjectCard key={project.title} {...project} />
-              ))}
-            </div>
-          </div>
+    <SiteLayout
+      title="Selected work"
+      description="Explore Prince Charles’s work across AI media, fashion systems, commerce, and decentralized products."
+      path="/projects"
+    >
+      <section className="page-shell inner-page">
+        <p className="eyebrow">THE WORK / 2021 — TODAY</p>
+        <h1 className="page-title">
+          Ideas made real.
+          <br />
+          <span className="outline-text">Systems made useful.</span>
+        </h1>
+        <div className="page-intro">
+          <p>
+            Four different products. The same curiosity about how
+            <br className="desktop-break" /> thoughtful interfaces and connected
+            systems work together.
+          </p>
+          <span className="eyebrow">04 SELECTED PROJECTS</span>
         </div>
-      </main>
-    </div>
+        <div
+          className="project-filters"
+          role="group"
+          aria-label="Filter projects"
+        >
+          {filters.map((label, i) => (
+            <button
+              key={label}
+              aria-pressed={filter === i}
+              onClick={() => setFilter(i)}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+        <div className="project-grid" aria-live="polite">
+          {projects.map((project) => (
+            <Reveal key={project.slug}>
+              <ProjectCard
+                project={project}
+                index={featuredProjects.indexOf(project)}
+              />
+            </Reveal>
+          ))}
+        </div>
+      </section>
+    </SiteLayout>
   );
 }
-
-export default ProjectsPage

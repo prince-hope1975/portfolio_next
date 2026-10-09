@@ -1,112 +1,129 @@
-import type { NextPage } from 'next';
-import { Button } from '@/components/ui/button';
-import { Header } from '@/components/header';
-import { NextSeo } from 'next-seo';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code, BrainCircuit, Network, Smartphone, Server, Database } from 'lucide-react';
-import Image from 'next/image';
-
-const AboutPage: NextPage = () => {
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
+import { SiteLayout } from "@/components/SiteLayout";
+import { Reveal } from "@/components/Reveal";
+import { experience } from "@/data/projects";
+export default function About() {
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
-      <NextSeo
-        title="About Me - Prince Charles"
-        description="Learn more about Prince Charles, a Senior AI, Blockchain and Fullstack Engineer."
-      />
-
-      <Header />
-
-      <main className="flex-grow container mx-auto p-4 md:p-8">
-        {/* Hero Section */}
-        <section className="relative text-center py-20 mb-12 bg-card border rounded-lg overflow-hidden">
-          <div className="absolute inset-0 bg-primary/10 opacity-50"></div>
-          <div className="relative z-10">
-            <h1 className="text-5xl md:text-6xl font-bold">About Me</h1>
-            <p className="text-lg text-muted-foreground mt-4">
-              Innovator, problem-solver, and lifelong learner.
+    <SiteLayout
+      title="About me"
+      description="Meet Prince Charles, a senior full-stack engineer and hands-on technical lead based in Nigeria."
+      path="/about"
+    >
+      <section className="page-shell inner-page">
+        <p className="eyebrow">THE PERSON BEHIND THE SYSTEMS</p>
+        <h1 className="page-title">
+          Curious by nature.
+          <br />
+          <span className="outline-text">Engineer by practice.</span>
+        </h1>
+        <div className="bio-grid">
+          <div className="portrait-wrap">
+            <Image
+              src="/me.png"
+              alt="Prince Charles"
+              width={600}
+              height={650}
+              priority
+            />
+            <span className="portrait-caption">
+              PRINCE CHARLES / NIGERIA, UTC+1
+            </span>
+            <span className="portrait-star" aria-hidden="true">
+              ✳
+            </span>
+          </div>
+          <div className="bio-copy">
+            <p className="eyebrow">HELLO, I’M PRINCE.</p>
+            <h2>
+              I like seeing
+              <br />
+              the whole picture.
+            </h2>
+            <p>
+              I’m Charles-Amachree Prince, a senior full-stack engineer and
+              technical lead. I work across React and Next.js interfaces,
+              Node.js and TypeScript services, and the workflows connecting
+              them.
             </p>
-          </div>
-        </section>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Content */}
-          <div className="lg:col-span-2">
-            <Card>
-              <CardHeader className="flex flex-row items-center gap-4">
-                <Image
-                  src="/me.png"
-                  alt="Prince Charles"
-                  width={100}
-                  height={100}
-                  className="rounded-full border-4 border-primary"
-                />
-                <div>
-                  <CardTitle className="text-3xl">Prince Charles</CardTitle>
-                  <p className="text-muted-foreground">
-                    Senior AI, Blockchain & Fullstack Engineer
-                  </p>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-6 text-lg text-muted-foreground">
-                <p>
-                  I am a passionate and results-driven engineer with a strong background in building intelligent, decentralized applications and modern web experiences. My journey in technology has been fueled by a desire to solve complex problems and create impactful solutions.
-                </p>
-                <p>
-                  I thrive in dynamic environments where I can continuously learn and adapt to new challenges. Whether it{"'"}s developing a sophisticated AI model, architecting a secure blockchain application, or crafting a seamless user interface, I am committed to delivering high-quality work.
-                </p>
-                <p>
-                  Beyond coding, I am an advocate for open-source and enjoy contributing to projects that empower the developer community. I believe in the power of collaboration and am always open to connecting with like-minded individuals.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Right Sidebar */}
-          <div className="lg:col-span-1 space-y-8">
-            <Card>
-              <CardHeader>
-                <CardTitle>Skills & Expertise</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <SkillItem icon={<BrainCircuit size={24} />} title="AI & Machine Learning" skills="Python, TensorFlow, PyTorch" />
-                <SkillItem icon={<Network size={24} />} title="Blockchain" skills="Algorand, Reach, Solidity, PyTeal" />
-                <SkillItem icon={<Smartphone size={24} />} title="Frontend" skills="Next.js, React, TypeScript, Tailwind CSS" />
-                <SkillItem icon={<Server size={24} />} title="Backend" skills="Node.js, Express" />
-                <SkillItem icon={<Database size={24} />} title="Databases" skills="SQL & NoSQL" />
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Connect With Me</CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col gap-2">
-                <a href="https://github.com/prince-hope1975" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="w-full flex items-center gap-2">
-                    <Code size={20} /> GitHub
-                  </Button>
-                </a>
-                <a href="https://www.linkedin.com/in/princeam/" target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="w-full flex items-center gap-2">
-                    <Network size={20} /> LinkedIn
-                  </Button>
-                </a>
-              </CardContent>
-            </Card>
+            <p>
+              At Retink Media, I help build simplecx and lead a team of 5–6
+              developers through architecture, planning, code reviews, and
+              releases. My work also spans fashion tooling, commerce, and
+              decentralized applications.
+            </p>
+            <p>
+              I care about the details people experience and the systems they
+              rely on. A thoughtful interface and a dependable backend belong in
+              the same conversation.
+            </p>
+            <a
+              className="button button-orange"
+              href="/prince-charles-resume.pdf"
+              download
+            >
+              Download resume <ArrowUpRight size={17} />
+            </a>
           </div>
         </div>
-      </main>
-    </div>
+        <div className="bio-facts">
+          <div>
+            <span className="eyebrow">MY FOUNDATION</span>
+            <h3>
+              Electrical & Electronics
+              <br />
+              Engineering
+            </h3>
+            <p>
+              B.Eng. · Afe Babalola University
+              <br />
+              2018–2023
+            </p>
+          </div>
+          <div>
+            <span className="eyebrow">MY TOOLKIT</span>
+            <h3>Product to production.</h3>
+            <p>
+              TypeScript · React · Next.js · Node.js
+              <br />
+              PostgreSQL · Redis · Python · Docker
+            </p>
+          </div>
+          <div>
+            <span className="eyebrow">MY APPROACH</span>
+            <h3>
+              Think broadly.
+              <br />
+              Build deliberately.
+            </h3>
+            <p>
+              Product thinking, clear contracts,
+              <br />
+              and hands-on engineering delivery.
+            </p>
+          </div>
+        </div>
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">THE JOURNEY</p>
+            <h2>Built along the way.</h2>
+          </div>
+        </div>
+        <div className="experience-list">
+          {experience.map((item) => (
+            <Reveal key={item.company}>
+              <div className="experience-row full-experience">
+                <div>
+                  <h3>{item.company}</h3>
+                  <p>{item.detail}</p>
+                </div>
+                <p>{item.role}</p>
+                <span className="eyebrow">{item.dates}</span>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+    </SiteLayout>
   );
-};
-
-const SkillItem = ({ icon, title, skills }: { icon: React.ReactNode, title: string, skills: string }) => (
-  <div className="flex items-start gap-4">
-    <div className="text-primary">{icon}</div>
-    <div>
-      <h4 className="font-semibold">{title}</h4>
-      <p className="text-sm text-muted-foreground">{skills}</p>
-    </div>
-  </div>
-);
-
-export default AboutPage;
+}

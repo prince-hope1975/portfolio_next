@@ -1,34 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Prince Charles — Thoughtful interfaces. Serious systems.
 
-## Getting Started
+A graphic portfolio connecting frontend experiences, backend services, and AI workflows. Built with Next.js Pages Router, TypeScript, Framer Motion, React Three Fiber, Three.js, and locally hosted Instrument Serif / Manrope fonts.
 
-First, run the development server:
+## Development
 
-```bash
-npm run dev
-# or
-yarn dev
+Use the pnpm version pinned in `package.json` and the checked-in pnpm lockfile.
+
+```sh
+pnpm install --frozen-lockfile
+pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```sh
+pnpm exec tsc --noEmit
+pnpm lint
+pnpm build
+pnpm start
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Production URL
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Set `NEXT_PUBLIC_SITE_URL` to the deployment origin before building, for example your actual HTTPS portfolio domain. Vercel deployments also support `VERCEL_PROJECT_PRODUCTION_URL`. Without an origin, canonical and absolute social-image URLs are omitted and the sitemap is empty. No placeholder domain is published.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Content
 
-## Learn More
+- `data/projects.ts` contains projects, case study content, and the experience timeline.
+- `/projects/[slug]` is statically generated for simplecx, DrapOn, alswap, and Atlas DAO.
+- simplecx uses actual website and walkthrough captures. DrapOn uses actual garment input/output assets from its local demo. alswap and Atlas DAO use labeled architecture illustrations.
+- Project media includes alt text, captions, and provenance in `data/projects.ts`; case study images open in an accessible native dialog.
+- The interactive 3D assembly has Interface / API / Worker / Storage layers, drag rotation, expand/collapse, and a request simulation with optional retry. It makes no live provider requests.
+- The general resume download is `public/prince-charles-resume.pdf`, copied from the clean resume selected during planning.
+- Contact is direct email, with GitHub and LinkedIn links.
+- Motion respects `prefers-reduced-motion`. All scene controls work through HTML buttons; WebGL failure retains a 2D illustration. Rendering pauses offscreen and while the document is hidden.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Fonts are licensed under the SIL Open Font License; licenses are included in `public/fonts/`.

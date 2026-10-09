@@ -1,29 +1,52 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/ThemeToggle";
-
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { useRouter } from "next/router";
+import { useState } from "react";
 export function Header() {
+  const [open, setOpen] = useState(false);
+  const { pathname } = useRouter();
   return (
-    <header className="py-4 px-8 border-b">
-      <nav className="flex justify-between items-center">
-        <div className="flex items-center gap-4">
-          <Link href="/">
-            <div className="font-bold text-lg">Prince Charles</div>
+    <header className="site-header">
+      <Link
+        passHref
+        href="/"
+        className="wordmark"
+        aria-label="Prince Charles home"
+      >
+        prince<span className="wordmark-star">✳</span>
+      </Link>
+      <button
+        className="menu-toggle"
+        aria-label={open ? "Close navigation" : "Open navigation"}
+        aria-expanded={open}
+        aria-controls="site-navigation"
+        onClick={() => setOpen(!open)}
+      >
+        {open ? <X /> : <Menu />}
+      </button>
+      <nav
+        id="site-navigation"
+        className={open ? "navigation is-open" : "navigation"}
+        aria-label="Main navigation"
+      >
+        {[
+          ["/projects", "Selected work"],
+          ["/about", "About me"],
+          ["/contact", "Contact"],
+        ].map(([href, label]) => (
+          <Link
+            key={href}
+            href={href}
+            aria-current={pathname.startsWith(href) ? "page" : undefined}
+            onClick={() => setOpen(false)}
+          >
+            {label}
           </Link>
-          <div className="flex gap-4 items-center">
-            <Link href="/about" passHref legacyBehavior>
-              <Button variant="ghost">About</Button>
-            </Link>
-            <Link href="/projects" passHref legacyBehavior>
-              <Button variant="ghost">Projects</Button>
-            </Link>
-            <Link href="/contact" passHref legacyBehavior>
-              <Button variant="ghost">Contact</Button>
-            </Link>
-          </div>
-        </div>
-        <ThemeToggle />
+        ))}
       </nav>
+      <a className="header-contact" href="mailto:amachreeprince7@gmail.com">
+        Let’s talk <ArrowUpRight size={16} />
+      </a>
     </header>
   );
 }
