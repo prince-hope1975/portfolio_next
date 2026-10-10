@@ -8,7 +8,7 @@ try {
   const url = new URL(configuredOrigin);
   if (/^https?:$/.test(url.protocol)) origin = url.origin;
 } catch {}
-const title = "Prince Charles — Thoughtful interfaces. Serious systems.";
+const title = "Prince Charles — Full-stack engineer & technical lead";
 const description =
   "Senior full-stack engineer and technical lead building expressive interfaces, backend services, and AI workflows.";
 const SEO = {
@@ -27,7 +27,7 @@ const SEO = {
               url: `${origin}/og-image.png`,
               width: 1200,
               height: 630,
-              alt: "Prince Charles — Thoughtful interfaces. Serious systems.",
+              alt: "Prince Charles — Full-stack engineer & technical lead",
             },
           ],
         }

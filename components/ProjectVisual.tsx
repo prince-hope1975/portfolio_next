@@ -41,9 +41,9 @@ export function ProjectVisual({
               />
             </div>
             <div className="garment-note">
-              A little fashion.
+              From a photograph.
               <br />
-              <i>A lot of engineering.</i>
+              <i>To a usable garment.</i>
             </div>
           </div>
         ) : (
@@ -82,9 +82,9 @@ export function ProjectVisual({
         <div className="commerce-architecture">
           <ShoppingBag size={35} strokeWidth={1} />
           <h3>
-            The order is
+            Commerce,
             <br />
-            <i>just the start.</i>
+            <i>connected.</i>
           </h3>
           <div className="order-route">
             {["Storefront", "Order", "Payment", "Inventory"].map((s, i) => (
@@ -103,11 +103,11 @@ export function ProjectVisual({
         <div className="atlas-architecture">
           <Network size={40} strokeWidth={1} />
           <h3>
-            People.
+            Community.
             <br />
             <i>Proposals.</i>
             <br />
-            Possibility.
+            Typed connections.
           </h3>
           <div className="atlas-route">
             <span>USER INTERFACE</span>

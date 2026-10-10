@@ -1,7 +1,6 @@
 import Link from "next/link";
 import {
   ArrowDown,
-  ArrowDownRight,
   ArrowUpRight,
   Braces,
   Workflow,
@@ -16,14 +15,13 @@ import { featuredProjects, experience } from "@/data/projects";
 export default function Home() {
   return (
     <SiteLayout
-      title="Thoughtful interfaces. Serious systems."
+      title="Full-stack engineer & technical lead"
       description="Prince Charles is a senior full-stack engineer and technical lead building expressive interfaces, backend services, and AI workflows."
     >
       <section className="hero page-shell">
         <div className="hero-kicker">
           <span className="eyebrow">
-            <span className="status-dot" /> PRINCE CHARLES / SENIOR FULL-STACK
-            ENGINEER
+            <span className="status-dot" /> FULL-STACK ENGINEER / TECHNICAL LEAD
           </span>
           <span className="eyebrow hero-location">
             BASED IN NIGERIA · UTC+1
@@ -31,28 +29,21 @@ export default function Home() {
         </div>
         <div className="hero-grid">
           <div className="hero-copy">
-            <p className="hero-prelude">
-              The craft. The logic. The whole thing.
-            </p>
             <h1>
-              Thoughtful
+              Prince
               <br />
-              <em>interfaces.</em>
-              <br />
-              Serious <span className="hero-serif">systems.</span>
+              <span>
+                Charles<span className="name-dot">.</span>
+              </span>
             </h1>
             <div className="hero-summary">
-              <span className="hero-small-arrow">
-                <ArrowDownRight />
-              </span>
               <p>
-                I connect thoughtful frontend experiences,
-                <br className="desktop-break" /> reliable backends, and AI
-                workflows.
-                <br className="desktop-break" /> From the first interaction to
-                the final result.
+                I build interfaces, services, and the workflows between them.
               </p>
             </div>
+            <p className="hero-detail">
+              Building products across AI, commerce, and the web.
+            </p>
             <div className="hero-actions">
               <a className="button button-orange" href="#work">
                 Explore my work <ArrowDown size={17} />
@@ -69,7 +60,7 @@ export default function Home() {
           <SystemAssembly />
         </div>
         <div className="hero-bottom">
-          <span>PRODUCT THINKING. SYSTEMS THINKING. HANDS-ON BUILDING.</span>
+          <span>FRONTEND / BACKEND / ORCHESTRATION</span>
           <a href="#work">
             SCROLL TO EXPLORE <ArrowDown size={14} />
           </a>
@@ -77,7 +68,7 @@ export default function Home() {
       </section>
       <div className="work-divider page-shell">
         <span>SELECTED WORK, 2022—2026</span>
-        <span>SCROLL FOR THE GOOD STUFF ↓</span>
+        <span>EXPLORE THE WORK ↓</span>
       </div>
       <section id="work" className="work-section page-shell">
         <Reveal>
@@ -85,14 +76,15 @@ export default function Home() {
             <div>
               <p className="eyebrow">01 / SELECTED WORK</p>
               <h2>
-                A few things
+                Selected work.
                 <br />
-                <span className="muted-heading">I’ve put into the world.</span>
+                <span className="muted-heading">Connected by craft.</span>
               </h2>
             </div>
             <p>
-              From creative AI to commerce.
-              <br />A few things I’ve helped bring to life.
+              Real products. Different challenges.
+              <br />
+              My contribution, from product to production.
             </p>
           </div>
         </Reveal>
@@ -107,13 +99,11 @@ export default function Home() {
       <section className="about-strip page-shell">
         <Reveal className="about-strip-grid">
           <div>
-            <p className="eyebrow">03 / HOW I THINK</p>
+            <p className="eyebrow">02 / HOW I WORK</p>
             <h2>
-              I build the interface.
+              From interface
               <br />
-              And what makes
-              <br />
-              <span className="orange-text">it possible.</span>
+              <span className="orange-text">to infrastructure.</span>
             </h2>
             <Link passHref href="/about" className="text-link">
               More about me <ArrowUpRight size={18} />
@@ -123,17 +113,17 @@ export default function Home() {
             {[
               {
                 icon: PanelsTopLeft,
-                title: "Frontend with feeling.",
+                title: "Interfaces that make sense.",
                 text: "React, Next.js, and TypeScript. Interfaces built around the person using them.",
               },
               {
                 icon: Braces,
-                title: "Backend with purpose.",
+                title: "Services that hold together.",
                 text: "APIs, data models, and integrations that keep the product connected.",
               },
               {
                 icon: Workflow,
-                title: "Workflows with direction.",
+                title: "Workflows that finish the job.",
                 text: "AI processing, asynchronous jobs, and the path from input to useful output.",
               },
             ].map(({ icon: Icon, title, text }, i) => (
@@ -152,9 +142,10 @@ export default function Home() {
       <section className="experience-section page-shell">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">04 / EXPERIENCE</p>
+            <p className="eyebrow">03 / EXPERIENCE</p>
             <h2>
-              Hands on.<span className="muted-heading"> Eyes ahead.</span>
+              Hands-on work.
+              <span className="muted-heading"> Technical leadership.</span>
             </h2>
           </div>
           <a className="text-link" href="/prince-charles-resume.pdf" download>

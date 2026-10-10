@@ -4,21 +4,10 @@ import localFont from "next/font/local";
 import { DefaultSeo } from "next-seo";
 import SEO from "../next-seo.config";
 const display = localFont({
-  src: [
-    {
-      path: "../public/fonts/instrument-regular.ttf",
-      style: "normal",
-      weight: "400",
-    },
-    {
-      path: "../public/fonts/instrument-italic.ttf",
-      style: "italic",
-      weight: "400",
-    },
-  ],
+  src: "../public/fonts/bricolage.ttf",
   variable: "--font-display",
   display: "swap",
-  weight: "400",
+  weight: "200 800",
 });
 const body = localFont({
   src: "../public/fonts/body.woff2",

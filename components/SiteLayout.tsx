@@ -36,11 +36,11 @@ export function SiteLayout({
       <footer className="site-footer">
         <div className="footer-top">
           <div>
-            <p className="eyebrow">HAVE SOMETHING IN MIND?</p>
+            <p className="eyebrow">LET’S BUILD SOMETHING USEFUL.</p>
             <a className="footer-title" href="mailto:amachreeprince7@gmail.com">
-              Let’s build
+              Have a project
               <br />
-              something good.
+              in mind?
               <ArrowUpRight />
             </a>
           </div>
@@ -72,7 +72,7 @@ export function SiteLayout({
             prince<span className="wordmark-star">✳</span>
           </Link>
           <span>© {new Date().getFullYear()} Prince Charles</span>
-          <span>Built with intent. From Nigeria, to everywhere.</span>
+          <span>Interfaces / Services / Workflows</span>
         </div>
       </footer>
     </>

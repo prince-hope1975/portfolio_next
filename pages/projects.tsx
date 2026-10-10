@@ -22,9 +22,9 @@ export default function Projects() {
       <section className="page-shell inner-page">
         <p className="eyebrow">THE WORK / 2021 — TODAY</p>
         <h1 className="page-title">
-          Ideas made real.
+          Selected projects.
           <br />
-          <span className="outline-text">Systems made useful.</span>
+          <span className="outline-text">Built across the stack.</span>
         </h1>
         <div className="page-intro">
           <p>

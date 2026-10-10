@@ -13,9 +13,9 @@ export default function About() {
       <section className="page-shell inner-page">
         <p className="eyebrow">THE PERSON BEHIND THE SYSTEMS</p>
         <h1 className="page-title">
-          Curious by nature.
+          Engineer. Builder.
           <br />
-          <span className="outline-text">Engineer by practice.</span>
+          <span className="outline-text">Technical lead.</span>
         </h1>
         <div className="bio-grid">
           <div className="portrait-wrap">
