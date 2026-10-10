@@ -4,7 +4,7 @@ A graphic portfolio connecting frontend experiences, backend services, and AI wo
 
 ## Development
 
-Use the pnpm version pinned in `package.json` and the checked-in pnpm lockfile.
+Use Node.js 24 LTS from `.nvmrc`, plus the pnpm version pinned in `package.json` and the checked-in pnpm lockfile.
 
 ```sh
 pnpm install --frozen-lockfile
